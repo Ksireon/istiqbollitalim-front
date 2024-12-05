@@ -22,7 +22,7 @@ export default function Zapros1() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:7777/openlessons', formData);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/openlessons`, formData);
       setResponseMessage(response.data.message);
       setFormData({ firsName: '', number: '' });
     } catch (error) {

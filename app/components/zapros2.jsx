@@ -23,7 +23,7 @@ export default function Zapros2() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:7777/otkritiyUrok', formData);
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/otkritiyUrok`, formData);
             setResponseMessage(response.data.message);
             setFormData({ firsName: '', number: '', urok: '' });
         } catch (error) {
