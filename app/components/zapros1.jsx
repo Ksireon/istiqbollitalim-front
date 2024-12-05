@@ -24,6 +24,7 @@ export default function Zapros1() {
     try {
       const response = await axios.post('https://istiqbollitalim-app-1f6ea5e54343.herokuapp.com/openlessons', formData);
       setResponseMessage(response.data.message);
+      console.log('Form reset:', formData); // Для проверки
       setFormData({ firsName: '', number: '' });
     } catch (error) {
       setResponseMessage('Error submitting form');
