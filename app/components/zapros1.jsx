@@ -22,7 +22,7 @@ export default function Zapros1() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('process.env.REACT_APP_API_URL/openlessons', formData);
+      const response = await axios.post('https://istiqbollitalim-app-1f6ea5e54343.herokuapp.com/openlessons', formData);
       setResponseMessage(response.data.message);
       setFormData({ firsName: '', number: '' });
     } catch (error) {

@@ -22,7 +22,7 @@ export default function Zapros4() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('process.env.REACT_APP_API_URL/review', formData);
+      const response = await axios.post('https://istiqbollitalim-app-1f6ea5e54343.herokuapp.com/review', formData);
       setResponseMessage(response.data.message);
       setFormData({ firsName: '', review: '' });
     } catch (error) {
