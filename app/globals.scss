@@ -277,29 +277,72 @@ main {
 
 .otzivi {
     font-family: GilroyR;
-    width: 1600px;
-    height: 670px;
-    margin-top: 116px;
-    margin-left: 96px;
+    width: 100%;
+    height: auto;
+    margin: 116px auto 0;
+    padding: 0 20px;
 
     h1 {
         color: #0F1F44;
         font-size: 55px;
+        text-align: center;
+        margin-bottom: 60px;
     }
 
     .gridsvid {
-        margin-top: 60px;
-        margin-left: 150px;
-        width: 1409px;
+        width: 100%;
+        max-width: 1409px;
         height: 455px;
+        margin: 0 auto;
         display: flex;
-        justify-content: space-between;
+        gap: 22px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding: 0 20px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         .vid {
-            width: 455px;
+            min-width: 455px;
             height: 455px;
-            background-color: aqua;
+            background-color: #D9D9D9;
+            border-radius: 8px;
+            scroll-snap-align: center;
+            flex-shrink: 0;
             cursor: pointer;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .otzivi {
+        margin-top: 60px;
+        padding: 0 15px;
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .gridsvid {
+            height: 300px;
+            gap: 15px;
+            padding: 0 15px;
+
+            .vid {
+                min-width: 300px;
+                height: 300px;
+            }
         }
     }
 }
@@ -1756,97 +1799,46 @@ footer {
     .otzivi {
         width: 100%;
         height: auto;
-        padding: 40px 15px;
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(180deg, #0F1F44 0%, rgba(15, 31, 68, 0.9) 100%);
+        padding: 40px 0;
+        background-color: #0F1F44;
 
         h1 {
-            font-size: 28px;
-            text-align: center;
-            margin-bottom: 30px;
-            color: white;
+            font-size: 24px;
             font-family: GilroyB;
-        }
-
-        .carousel-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            padding: 0 15px;
         }
 
         .gridsvid {
             display: flex;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            width: 100%;
-            touch-action: pan-x;
+            gap: 12px;
+            padding: 0 15px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 20px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
 
             .vid {
-                min-width: 100%;
-                height: auto;
-                margin: 0;
-                background: rgba(255, 255, 255, 0.05);
-                backdrop-filter: blur(10px);
-                border-radius: 15px;
-                padding: 15px;
-                
-                .video-container {
-                    width: 100%;
-                    height: 180px;
-                    background-color: #D9D9D9;
-                    border-radius: 10px;
-                    margin-bottom: 15px;
+                min-width: 280px;
+                height: 160px;
+                background-color: #D9D9D9;
+                border-radius: 10px;
+                scroll-snap-align: center;
+                flex-shrink: 0;
+                position: relative;
+
+                &:first-child {
+                    margin-left: 0;
                 }
 
-                .review-content {
-                    padding: 15px;
-                    
-                    h3 {
-                        color: white;
-                        font-size: 18px;
-                        margin-bottom: 10px;
-                        font-family: GilroyB;
-                    }
-
-                    p {
-                        color: rgba(255, 255, 255, 0.9);
-                        font-size: 14px;
-                        line-height: 1.5;
-                        margin-bottom: 10px;
-                        font-family: GilroyR;
-                    }
-
-                    .date {
-                        color: rgba(255, 255, 255, 0.6);
-                        font-size: 12px;
-                        font-family: GilroyR;
-                    }
-                }
-            }
-        }
-
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            gap: 8px;
-
-            .dot {
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                border: none;
-                background-color: rgba(255, 255, 255, 0.3);
-                cursor: pointer;
-                padding: 0;
-                transition: all 0.3s ease;
-
-                &.active {
-                    background-color: white;
-                    width: 24px;
-                    border-radius: 4px;
+                &:last-child {
+                    margin-right: 15px;
                 }
             }
         }

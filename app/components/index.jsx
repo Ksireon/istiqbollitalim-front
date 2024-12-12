@@ -220,49 +220,10 @@ export default function MainPage() {
 
         <div className="otzivi">
           <h1>Отзывы родителей</h1>
-          <div className="carousel-container">
-            <div 
-              className="gridsvid" 
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
-              <div className="vid">
-                <div className="video-container"></div>
-                <div className="review-content">
-                  <h3>Анна Петрова</h3>
-                  <p>"Замечательная школа! Наш ребенок с удовольствием учится здесь уже второй год..."</p>
-                  <span className="date">15.03.2024</span>
-                </div>
-              </div>
-              <div className="vid">
-                <div className="video-container"></div>
-                <div className="review-content">
-                  <h3>Сергей Иванов</h3>
-                  <p>"Высокий уровень образования и внимательный подход к каждому ученику..."</p>
-                  <span className="date">12.03.2024</span>
-                </div>
-              </div>
-              <div className="vid">
-                <div className="video-container"></div>
-                <div className="review-content">
-                  <h3>Мария Сидорова</h3>
-                  <p>"Отличный преподавательский состав и современный подход к обучению..."</p>
-                  <span className="date">10.03.2024</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="carousel-dots">
-              {[0, 1, 2].map((dot) => (
-                <button
-                  key={dot}
-                  className={`dot ${currentSlide === dot ? 'active' : ''}`}
-                  onClick={() => setCurrentSlide(dot)}
-                />
-              ))}
-            </div>
+          <div className="gridsvid">
+            <div className="vid"></div>
+            <div className="vid"></div>
+            <div className="vid"></div>
           </div>
         </div>
 
@@ -311,7 +272,7 @@ export default function MainPage() {
             <h1>Открытые уроки</h1> <br />
             <p>Наши ученики получают не только фундаментальные <br />
               знания по основным предметам, таким как математика, <br />
-              язык, наука и искусство, но и развивают важные <br />
+              язык, наука и искусств, но и развивают важные <br />
               жизненные навыки. Мы уделяем большое внимание <br />
               развитию коммуникативных способностей, умению <br />
               решать проблемы, работать в команде и <br />
@@ -354,7 +315,7 @@ export default function MainPage() {
                   в действии (6 класс)...................31.08.24/09:00</p>
                 <p>Тайны кислот и оснований: индикаторы <br />
                   в действии (6 класс)...................31.08.24/09:00</p>
-                <p>Та��ны кислот и оснований: индикаторы <br />
+                <p>Тайны кислот и оснований: индикаторы <br />
                   в действии (6 класс)...................31.08.24/09:00</p>
                 <p>Тайны кислот и оснований: индикаторы <br />
                   в действии (6 класс)...................31.08.24/09:00</p>
@@ -427,7 +388,7 @@ export default function MainPage() {
                   Иванова</h1>
                 <h2>Учитель математики</h2>
                 <br /> <p>
-                  Опытный и вдохновляющий педагог, который <br /> работает в нашей школе [количество лет] лет... <br />
+                  Оп��тный и вдохновляющий педагог, который <br /> работает в нашей школе [количество лет] лет... <br />
                   <br />
                   <a href="">читать далее</a>
                 </p>
@@ -475,7 +436,7 @@ export default function MainPage() {
               строго контролируется: все посетители проходят обязательную регистрацию и идентификацию на входе. <br />
               <br />
 
-              Мы также уделяем особое внимание внутреннему распорядку и дисциплине. Учащиеся и сотрудники школы <br />
+              Мы также уделяем особое внимание внутр��ннему распорядку и дисциплине. Учащиеся и сотрудники школы <br />
               регулярно участвуют в инструктажах по вопросам безопасности, включая правила эвакуации и поведения в <br />
               чрезвычайных ситуациях. <br /> <br />
 
