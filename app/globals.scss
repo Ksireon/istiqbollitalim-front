@@ -578,6 +578,58 @@ main {
     }
 }
 
+@media screen and (max-width: 360px) {
+    .formblock2 {
+        height: auto;
+        padding: 40px 15px;
+
+        .center {
+            width: 100%;
+            height: auto;
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: none;
+            margin: 0;
+            padding: 20px 0;
+
+            h1 {
+                font-size: 24px;
+                margin: 0 0 30px 0;
+                text-align: center;
+            }
+
+            form {
+                width: 100%;
+
+                input {
+                    width: 100%;
+                    height: 45px;
+                    margin: 15px 0;
+                    padding: 10px;
+                    font-size: 16px;
+
+                    &.inp2 {
+                        margin-left: 0;
+                    }
+
+                    &.inp3 {
+                        width: 100%;
+                    }
+                }
+
+                button {
+                    width: 100%;
+                    height: 50px;
+                    margin-top: 30px;
+                    font-size: 18px;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+
 .ped_sostav {
     font-family: GilroyB;
     width: 100%;
