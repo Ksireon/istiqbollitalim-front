@@ -149,6 +149,19 @@ export default function MainPage() {
   }, []);
 
 
+  const scrollPedSostav = (direction) => {
+    const container = document.querySelector('.ped_sostav .flexbox');
+    const scrollAmount = direction === 'left' ? -520 : 520; // Ширина карточки
+    
+    if (container) {
+        container.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+  };
+
+
   return (
       <div className="mainPage">
         <Header />
@@ -250,7 +263,7 @@ export default function MainPage() {
         <div className="metodiki" ref={(el) => (sectionsRef.current[1] = el)}>
           <div className="right"></div>
           <div className="left">
-            <h1>Методики обучения</h1> <br />
+            <h1>Методики обуч��ния</h1> <br />
             <p>Мы используем современные методики обучения, <br />
               которые сочетают в себе лучшие традиции <br />
               образования и инновационные подходы. Наши педагоги <br />
@@ -269,7 +282,7 @@ export default function MainPage() {
 
         <div className="otkr_uroki" ref={(el) => (sectionsRef.current[2] = el)}>
           <div className="left">
-            <h1>Открытые уроки</h1> <br />
+            <h1>Открытые ур��ки</h1> <br />
             <p>Наши ученики получают не только фундаментальные <br />
               знания по основным предметам, таким как математика, <br />
               язык, наука и искусств, но и развивают важные <br />
@@ -327,7 +340,7 @@ export default function MainPage() {
               <div className="img3"></div> <br />
               <h1>Геометрия</h1>
               <div className="bottom">
-                <p>Тайны кислот и оснований: индикаторы <br />
+                <p>Тайны кислот и о��нований: индикаторы <br />
                   в действии (6 класс)...................31.08.24/09:00</p>
                 <p>Тайны кислот и оснований: индикаторы <br />
                   в действии (6 класс)...................31.08.24/09:00</p>
@@ -351,8 +364,8 @@ export default function MainPage() {
 
 
         <div className="ped_sostav">
+          <div className="arrowleft" onClick={() => scrollPedSostav('left')}></div>
           <h1 className="h1">Педагогический состав</h1>
-          <div className="arrowleft"></div>
           <div className="flexbox">
 
             <div className="div">
@@ -388,14 +401,14 @@ export default function MainPage() {
                   Иванова</h1>
                 <h2>Учитель математики</h2>
                 <br /> <p>
-                  Оп��тный и вдохновляющий педагог, который <br /> работает в нашей школе [количество лет] лет... <br />
+                  Оптный и вдохновляющий педагог, который <br /> работает в нашей школе [количество лет] лет... <br />
                   <br />
                   <a href="">читать далее</a>
                 </p>
               </div>
             </div>
           </div>
-          <div className="arrowright"></div>
+          <div className="arrowright" onClick={() => scrollPedSostav('right')}></div>
         </div>
 
         <div className="infrastructure">
@@ -436,7 +449,7 @@ export default function MainPage() {
               строго контролируется: все посетители проходят обязательную регистрацию и идентификацию на входе. <br />
               <br />
 
-              Мы также уделяем особое внимание внутр��ннему распорядку и дисциплине. Учащиеся и сотрудники школы <br />
+              Мы также уделяем особое внимание внутреннему распорядку и дисциплине. Учащиеся и сотрудники школы <br />
               регулярно участвуют в инструктажах по вопросам безопасности, включая правила эвакуации и поведения в <br />
               чрезвычайных ситуациях. <br /> <br />
 
@@ -473,7 +486,7 @@ export default function MainPage() {
         </div>
         <div className="formblock4">
           <div className="center">
-            <h1>Вы можете оставить свой отзыв тут</h1>
+            <h1>Вы можете ставить свой отзыв тут</h1>
             <Zapros4 />
           </div>
         </div>
