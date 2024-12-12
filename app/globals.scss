@@ -347,10 +347,10 @@ main {
     }
 }
 
-.zanyatiya {
+.zanyatiya, .metodiki, .otkr_uroki {
     width: 90%;
-    height: 612px;
-    margin: 210px auto 0px;
+    height: auto;
+    margin: 210px auto 0;
     display: flex;
     font-family: GilroyR;
 
@@ -363,90 +363,79 @@ main {
         h1 {
             font-size: 35px;
             color: #0F1F44;
+            margin-bottom: 20px;
         }
 
         p {
             font-size: 25px;
+            line-height: 1.5;
         }
     }
 
     .right {
         width: 45%;
-        height: 100%;
-        background-image: url(./icons/deti.png);
+        height: 612px;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         margin-right: 100px;
     }
 }
-
 
 .metodiki {
-    width: 90%;
-    height: 612px;
-    margin: 210px auto 0px;
-    display: flex;
-    font-family: GilroyR;
-
     .left {
-        width: 55%;
-        height: 100%;
-        padding-top: 100px;
         padding-left: 70px;
-
-        h1 {
-            font-size: 35px;
-            color: #0F1F44;
-        }
-
-        p {
-            font-size: 25px;
-        }
     }
 
     .right {
-        width: 45%;
-        height: 100%;
-        background-image: url(./icons/deti2.png);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
         margin-left: 100px;
+        margin-right: 0;
     }
 }
 
-.otkr_uroki {
-    width: 90%;
-    height: 612px;
-    margin: 210px auto 0px;
-    display: flex;
-    font-family: GilroyR;
+@media screen and (max-width: 768px) {
+    .zanyatiya, .metodiki, .otkr_uroki {
+        width: 100%;
+        margin: 60px auto 0;
+        flex-direction: column;
+        padding: 0 20px;
 
-    .left {
-        width: 55%;
-        height: 100%;
-        padding-top: 100px;
-        padding-left: 150px;
+        .left {
+            width: 100%;
+            padding: 0;
+            order: 0;
 
-        h1 {
-            font-size: 35px;
-            color: #0F1F44;
+            h1 {
+                font-size: 28px;
+                margin-bottom: 15px;
+                text-align: left;
+            }
+
+            p {
+                font-size: 16px;
+                text-align: left;
+                br {
+                    display: none;
+                }
+            }
         }
 
-        p {
-            font-size: 25px;
+        .right {
+            width: 100%;
+            height: 300px;
+            margin: 20px 0 0 0;
+            order: 1;
         }
     }
 
-    .right {
-        width: 45%;
-        height: 100%;
-        background-image: url(./icons/deti3.png);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin-right: 100px;
+    .metodiki {
+        .left {
+            padding: 0;
+        }
+
+        .right {
+            margin: 20px 0 0 0;
+        }
     }
 }
 
@@ -1842,5 +1831,23 @@ footer {
                 }
             }
         }
+    }
+}
+
+.zanyatiya {
+    .right {
+        background-image: url(./icons/deti.png);
+    }
+}
+
+.metodiki {
+    .right {
+        background-image: url(./icons/deti2.png);
+    }
+}
+
+.otkr_uroki {
+    .right {
+        background-image: url(./icons/deti3.png);
     }
 }
