@@ -5,9 +5,13 @@ export default function MapIframe() {
             width="600"
             height="450"
             style={{
-                border: 0, width: '720px', height: '720px', position: 'absolute',
-                top: '340px',
-                left: '120px'
+                border: 0, 
+                width: window?.innerWidth <= 360 ? '280px' : '720px',
+                height: window?.innerWidth <= 360 ? '280px' : '720px',
+                position: 'absolute',
+                bottom: window?.innerWidth <= 360 ? '30px' : '340px',
+                left: window?.innerWidth <= 360 ? '50%' : '120px',
+                transform: window?.innerWidth <= 360 ? 'translateX(-50%)' : 'none'
             }}
             allowFullScreen=""
             loading="lazy"

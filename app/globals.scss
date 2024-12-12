@@ -2447,9 +2447,11 @@ footer {
 @media screen and (max-width: 360px) {
     footer {
         width: 100%;
-        height: 1200px;
+        height: 700px;
         padding: 40px 0;
         position: relative;
+        display: flex;
+        flex-direction: column;
 
         h1 {
             position: relative;
@@ -2459,26 +2461,7 @@ footer {
             text-align: center;
             margin-bottom: 30px;
             padding: 0 15px;
-        }
-
-        .adressblock {
-            width: 100%;
-            height: 250px;
-            position: relative;
-            top: 0;
-            left: 0;
-            margin-bottom: 30px;
-            padding: 0 15px;
-
-            iframe {
-                width: calc(100% - 30px) !important;
-                height: 250px !important;
-                position: relative !important;
-                top: 0 !important;
-                left: 15px !important;
-                border-radius: 12px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            }
+            order: 1;
         }
 
         .cont {
@@ -2490,6 +2473,9 @@ footer {
             padding: 0 15px;
             flex-direction: column;
             gap: 15px;
+            order: 2;
+            margin-bottom: 30px;
+
             .left, .right {
                 width: 100%;
                 height: auto;
@@ -2527,6 +2513,28 @@ footer {
                     height: 50px;
                     margin: 5px 0;
                 }
+            }
+        }
+
+        .adressblock {
+            width: 100%;
+            height: 250px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin: 0;
+            padding: 0 15px;
+            order: 3;
+            margin-top: 20px;
+
+            iframe {
+                width: calc(100% - 30px) !important;
+                height: 250px !important;
+                position: relative !important;
+                bottom: 0 !important;
+                left: 15px !important;
+                border-radius: 12px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             }
         }
     }
