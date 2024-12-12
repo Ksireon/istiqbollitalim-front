@@ -18,6 +18,9 @@ gsap.registerPlugin(ScrollTrigger);
 export default function MainPage() {
 
   const [hasError, setHasError] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   useEffect(() => {
     try {
@@ -26,6 +29,32 @@ export default function MainPage() {
       console.error(error); 
     }
   }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === 2 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? 2 : prev - 1));
+  };
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) { // Свайп влево
+      nextSlide();
+    }
+
+    if (touchStart - touchEnd < -75) { // Свайп вправо
+      prevSlide();
+    }
+  };
 
   if (hasError) {
     return <div>Произошла ошибка при загрузке компонента.</div>; // Показываем сообщение об ошибке
@@ -189,12 +218,51 @@ export default function MainPage() {
           </div>
         </div>
 
-        <div className="otzivi" >
+        <div className="otzivi">
           <h1>Отзывы родителей</h1>
-          <div className="gridsvid">
-            <div className="vid"></div>
-            <div className="vid"></div>
-            <div className="vid"></div>
+          <div className="carousel-container">
+            <div 
+              className="gridsvid" 
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              <div className="vid">
+                <div className="video-container"></div>
+                <div className="review-content">
+                  <h3>Анна Петрова</h3>
+                  <p>"Замечательная школа! Наш ребенок с удовольствием учится здесь уже второй год..."</p>
+                  <span className="date">15.03.2024</span>
+                </div>
+              </div>
+              <div className="vid">
+                <div className="video-container"></div>
+                <div className="review-content">
+                  <h3>Сергей Иванов</h3>
+                  <p>"Высокий уровень образования и внимательный подход к каждому ученику..."</p>
+                  <span className="date">12.03.2024</span>
+                </div>
+              </div>
+              <div className="vid">
+                <div className="video-container"></div>
+                <div className="review-content">
+                  <h3>Мария Сидорова</h3>
+                  <p>"Отличный преподавательский состав и современный подход к обучению..."</p>
+                  <span className="date">10.03.2024</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="carousel-dots">
+              {[0, 1, 2].map((dot) => (
+                <button
+                  key={dot}
+                  className={`dot ${currentSlide === dot ? 'active' : ''}`}
+                  onClick={() => setCurrentSlide(dot)}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
@@ -286,7 +354,7 @@ export default function MainPage() {
                   в действии (6 класс)...................31.08.24/09:00</p>
                 <p>Тайны кислот и оснований: индикаторы <br />
                   в действии (6 класс)...................31.08.24/09:00</p>
-                <p>Тайны кислот и оснований: индикаторы <br />
+                <p>Та��ны кислот и оснований: индикаторы <br />
                   в действии (6 класс)...................31.08.24/09:00</p>
                 <p>Тайны кислот и оснований: индикаторы <br />
                   в действии (6 класс)...................31.08.24/09:00</p>
