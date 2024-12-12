@@ -19,8 +19,9 @@ export default function MainPage() {
 
   const [hasError, setHasError] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const pedSostavRef = useRef(null);
 
   useEffect(() => {
     try {
@@ -47,13 +48,33 @@ export default function MainPage() {
   };
 
   const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 75) { // Свайп влево
-      nextSlide();
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      scrollPedSostav('right');
+    }
+    if (isRightSwipe) {
+      scrollPedSostav('left');
     }
 
-    if (touchStart - touchEnd < -75) { // Свайп вправо
-      prevSlide();
-    }
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
+  const scrollPedSostav = (direction) => {
+    const container = pedSostavRef.current?.querySelector('.flexbox');
+    if (!container) return;
+
+    const scrollAmount = direction === 'left' ? -320 : 320;
+    
+    container.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
   };
 
   if (hasError) {
@@ -149,19 +170,6 @@ export default function MainPage() {
   }, []);
 
 
-  const scrollPedSostav = (direction) => {
-    const container = document.querySelector('.ped_sostav .flexbox');
-    const scrollAmount = direction === 'left' ? -520 : 520; // Ширина карточки
-    
-    if (container) {
-        container.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
-    }
-  };
-
-
   return (
       <div className="mainPage">
         <Header />
@@ -246,7 +254,7 @@ export default function MainPage() {
             <h1>Как проходят занятия в нашей школе</h1> <br />
             <p>В нашей школе каждый учебный день наполнен <br />
               разнообразными занятиями, которые направлены на <br />
-              всестороннее развитие. Мы стремимся создать среду, <br />
+              всестороннее развитие. ���ы стремимся создать среду, <br />
               где каждый ученик чувствует себя <br />
               комфортно и уверенно. Занятия проходят <br />
               в увлекательной и интерактивной форме, <br />
@@ -263,9 +271,9 @@ export default function MainPage() {
         <div className="metodiki" ref={(el) => (sectionsRef.current[1] = el)}>
           <div className="right"></div>
           <div className="left">
-            <h1>Методики обуч��ния</h1> <br />
+            <h1>Методики обучения</h1> <br />
             <p>Мы используем современные методики обучения, <br />
-              которые сочетают в себе лучшие традиции <br />
+              которые сочет��ют в себе лучшие траиции <br />
               образования и инновационные подходы. Наши педагоги <br />
               активно применяют методики проектного обучения, где <br />
               дети работают над реальными задачами и проектами, <br />
@@ -282,9 +290,9 @@ export default function MainPage() {
 
         <div className="otkr_uroki" ref={(el) => (sectionsRef.current[2] = el)}>
           <div className="left">
-            <h1>Открытые ур��ки</h1> <br />
-            <p>Наши ученики получают не только фундаментальные <br />
-              знания по основным предметам, таким как математика, <br />
+            <h1>Открытые урки</h1> <br />
+            <p>Наши ученики получают не только фундамента��ьные <br />
+              ��нания по основным предметам, таким как математика, <br />
               язык, наука и искусств, но и развивают важные <br />
               жизненные навыки. Мы уделяем большое внимание <br />
               развитию коммуникативных способностей, умению <br />
@@ -340,7 +348,7 @@ export default function MainPage() {
               <div className="img3"></div> <br />
               <h1>Геометрия</h1>
               <div className="bottom">
-                <p>Тайны кислот и о��нований: индикаторы <br />
+                <p>Тайны кислот и оснований: индикаторы <br />
                   в действии (6 класс)...................31.08.24/09:00</p>
                 <p>Тайны кислот и оснований: индикаторы <br />
                   в действии (6 класс)...................31.08.24/09:00</p>
@@ -363,11 +371,15 @@ export default function MainPage() {
         </div>
 
 
-        <div className="ped_sostav">
+        <div className="ped_sostav" ref={pedSostavRef}>
           <div className="arrowleft" onClick={() => scrollPedSostav('left')}></div>
           <h1 className="h1">Педагогический состав</h1>
-          <div className="flexbox">
-
+          <div 
+            className="flexbox"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <div className="div">
               <div className="top"></div>
               <div className="bottom">
@@ -399,7 +411,7 @@ export default function MainPage() {
               <div className="bottom">
                 <h1>Анна Александровна <br />
                   Иванова</h1>
-                <h2>Учитель математики</h2>
+                <h2>Учиель математики</h2>
                 <br /> <p>
                   Оптный и вдохновляющий педагог, который <br /> работает в нашей школе [количество лет] лет... <br />
                   <br />
@@ -474,7 +486,7 @@ export default function MainPage() {
           </div>
         </div>
         <div className="istorii_uspexa">
-          <h1>Истории успеха</h1>
+          <h1>Истории упеха</h1>
           <div className="flexbox">
             <div className="arrowleft"></div>
             <div className="dev"></div>
