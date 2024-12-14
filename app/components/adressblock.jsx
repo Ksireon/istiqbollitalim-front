@@ -21,7 +21,7 @@ export default function MapIframe() {
             height="450"
             style={{
                 border: 0,
-                width: isMobile ? '280px' : '720px',
+                width: isMobile ? '80%' : '720px',
                 height: isMobile ? '280px' : '720px',
                 position: 'absolute',
                 bottom: isMobile ? '30px' : '340px',
