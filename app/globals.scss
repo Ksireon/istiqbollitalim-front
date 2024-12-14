@@ -86,12 +86,14 @@ main {
     position: relative;
 
     .blueblackfon {
-        z-index: 0;
         width: 100%;
-        height: 699px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
         background-color: #0F1F44;
         opacity: 0.5;
-        position: absolute;
+        z-index: 0;
     }
 
     .left {
@@ -2514,6 +2516,7 @@ footer {
         .blueblackfon {
             height: 100%;
             opacity: 0.7;
+            
         }
 
         .left {
@@ -2525,9 +2528,9 @@ footer {
             padding: 0;
             text-align: center;
             z-index: 2;
-            
+
             h1 {
-                font-size: 36px;
+                font-size: 26px;
                 line-height: 1.3;
                 margin: 0 auto;
                 max-width: 90%;
@@ -2544,18 +2547,21 @@ footer {
             left: 50%;
             transform: translateX(-50%);
             z-index: 1;
+            display: none;
         }
 
         .right {
             width: 90%;
             height: auto;
-            position: relative;
-            top: 120px;
-            margin: 0 auto;
+            position: absolute;
+            top: 30%;
+            left: 5%;
+            
+           
             background-color: rgba(15, 31, 68, 0.95);
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            
+
             .form {
                 width: 100%;
                 height: auto;
