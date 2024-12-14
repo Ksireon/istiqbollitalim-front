@@ -4,10 +4,10 @@ export default function MapIframe() {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        setIsMobile(window.innerWidth <= 360);
+        setIsMobile(window.innerWidth <= 460);
         
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 360);
+            setIsMobile(window.innerWidth <= 460);
         };
 
         window.addEventListener('resize', handleResize);
