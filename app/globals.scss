@@ -382,15 +382,18 @@ main {
     }
 }
 
-.metodiki {
-    .left {
-        padding-left: 70px;
-    }
+.zanyatiya .right {
+    margin-top: 50px;
+    background-image: url('./icons/deti.png');
+}
 
-    .right {
-        margin-left: 100px;
-        margin-right: 0;
-    }
+.metodiki .right {
+    background-image: url('./icons/deti2.png');
+}
+
+.otkr_uroki .right {
+    margin-top: 70px;
+    background-image: url('./icons/deti3.png');
 }
 
 @media screen and (max-width: 768px) {
