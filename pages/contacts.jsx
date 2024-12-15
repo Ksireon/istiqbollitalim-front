@@ -3,9 +3,9 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
 
-export default function Security() {
+export default function Contacts() {
     return (
-      <div>
+      <div className='contacts-page'>
         <Header />
         <Footer />
       </div>

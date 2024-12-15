@@ -5,7 +5,7 @@ import Footer from '@/app/components/Footer';
 
 
 
-export default function About() {
+export default function Blog() {
     return (
         <div>
             <Header />

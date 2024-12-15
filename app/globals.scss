@@ -301,7 +301,7 @@ main {
 
             .grids {
                 width: 100%;
-                height: 300px;
+                height: 320px;
                 min-height: 280px;
                 border: 1px solid rgba(255, 255, 255, 0.8);
                 padding: 25px 20px;
@@ -310,9 +310,9 @@ main {
                 flex-direction: column;
 
                 h2 {
-                    font-size: 26px;
+                    font-size: 24px;
                     color: rgb(255, 255, 255);
-                    margin: 30px 0 20px 0;
+                    margin: 10px 0 20px 0;
                     padding-left: 10px;
                 }
 
@@ -323,9 +323,11 @@ main {
                     background-position: center;
                     margin: 0 0 20px 10px;
                 }
-
+                .icon2{
+                    background-size: 470%;
+                }
                 p {
-                    font-size: 16px;
+                    font-size: 15px;
                     line-height: 1.5;
                     color: white;
                     padding: 0 10px;
@@ -2282,6 +2284,7 @@ footer {
     }
 }
 
+
 .container-hobbies {
     width: 85%;
     height: auto;
@@ -3112,5 +3115,104 @@ footer {
                 }
             }
         }
+    }
+    .reviews-page{
+        margin-top: 70px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .about-page {
+        margin-top: 70px; // To account for fixed header
+    }
+
+    .container-about {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        background-color: #0F1F44;
+        padding: 20px;
+
+        .top {
+            width: 100%;
+            height: auto;
+            padding: 30px 0;
+
+            h1 {
+                font-size: 28px;
+                color: white;
+                margin: 0 0 30px 0;
+                text-align: left;
+            }
+
+            p {
+                color: white;
+                font-size: 16px;
+                margin: 0;
+                line-height: 1.6;
+                text-align: left;
+                
+                br {
+                    display: none;
+                }
+            }
+        }
+
+        .bottom {
+            width: 100%;
+            height: auto;
+            padding: 40px 0;
+
+            .istorii_uspexa {
+                width: 100%;
+                height: auto;
+                margin: 0;
+
+                h1.h1white {
+                    font-size: 28px;
+                    margin: 0 0 30px 0;
+                    text-align: left;
+                }
+
+                .flexbox {
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    gap: 20px;
+                    overflow-x: auto;
+                    scroll-snap-type: x mandatory;
+                    scroll-behavior: smooth;
+                    -webkit-overflow-scrolling: touch;
+                    scrollbar-width: none;
+                    -ms-overflow-style: none;
+                    
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    .arrowleft, .arrowright {
+                        display: none; // Hide arrows on mobile
+                    }
+
+                    .dev {
+                        min-width: 280px;
+                        height: 200px;
+                        flex-shrink: 0;
+                        scroll-snap-align: center;
+                        background-color: blue;
+                        border-radius: 12px;
+                        transition: transform 0.3s ease;
+
+                        &:active {
+                            transform: scale(0.98);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .contacts-page{
+        margin-top: 70px;
     }
 }

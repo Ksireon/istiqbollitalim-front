@@ -3,9 +3,9 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
 
-export default function Security() {
+export default function Reviews() {
     return (
-        <div>
+        <div className='reviews-page'>
             <Header />
             <div className="otzivi" >
                 <h1>Отзывы родителей</h1>
@@ -26,7 +26,7 @@ export default function Security() {
                     <div className="vid"></div>
                 </div>
             </div>
-            <div className="istorii_uspexa-reviews">
+            <div className="istorii_uspexa-reviews istorii_uspexa">
                 <h1>Истории успеха</h1>
                 <div className="flexbox">
                     <div className="arrowleft"></div>

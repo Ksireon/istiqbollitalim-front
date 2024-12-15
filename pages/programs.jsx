@@ -9,7 +9,7 @@ import Footer from '@/app/components/Footer';
 
 
 
-export default function About() {
+export default function Programms() {
   return (
     <div>
       <Header />
