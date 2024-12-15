@@ -34,7 +34,7 @@ header {
     justify-content: space-between;
     align-items: center;
     color: white;
-    position: relative;
+
 
     .lefthead {
         position: absolute;
@@ -2521,27 +2521,32 @@ footer {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    position: absolute;
+    width: 35px;
+    height: 24px;
+    position: fixed;
     right: 20px;
-    top: 30px;
+    top: 23px;
     z-index: 1001;
     cursor: pointer;
-
+    overflow: hidden;
+    padding: 0;
+    background: none;
+    border: none;
+    
     span {
         display: block;
         width: 100%;
-        height: 2px;
+        height: 3px;
         background-color: white;
         transition: all 0.3s ease;
+        border-radius: 2px;
         transform-origin: center;
     }
 
     &.open {
         span {
             &:first-child {
-                transform: translateY(9px) rotate(45deg);
+                transform: translateY(10.5px) rotate(45deg);
             }
             
             &:nth-child(2) {
@@ -2549,7 +2554,7 @@ footer {
             }
             
             &:last-child {
-                transform: translateY(-9px) rotate(-45deg);
+                transform: translateY(-10.5px) rotate(-45deg);
             }
         }
     }
@@ -2644,7 +2649,7 @@ footer {
             &.open {
                 span {
                     &:first-child {
-                        transform: translateY(10px) rotate(45deg);
+                        transform: translateY(10.5px) rotate(45deg);
                     }
                     
                     &:nth-child(2) {
@@ -2652,7 +2657,7 @@ footer {
                     }
                     
                     &:last-child {
-                        transform: translateY(-10px) rotate(-45deg);
+                        transform: translateY(-10.5px) rotate(-45deg);
                     }
                 }
             }
