@@ -1,9 +1,56 @@
 import '../app/globals.scss'
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-
+import { useEffect } from 'react';
 
 export default function Security() {
+    useEffect(() => {
+        const sliders = document.querySelectorAll('.slider-container');
+        
+        sliders.forEach((slider) => {
+            const videosContainer = slider.querySelector('.videos-container');
+            const leftArrow = slider.querySelector('.arrowleft');
+            const rightArrow = slider.querySelector('.arrowright');
+            
+            // Scroll to next/previous video
+            const scrollAmount = videosContainer.clientWidth / 3;
+            
+            leftArrow.addEventListener('click', () => {
+                videosContainer.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+            
+            rightArrow.addEventListener('click', () => {
+                videosContainer.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Touch events for mobile swipe
+            let startX;
+            let scrollLeft;
+
+            videosContainer.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].pageX - videosContainer.offsetLeft;
+                scrollLeft = videosContainer.scrollLeft;
+            });
+
+            videosContainer.addEventListener('touchmove', (e) => {
+                if (!startX) return;
+                const x = e.touches[0].pageX - videosContainer.offsetLeft;
+                const walk = (x - startX);
+                videosContainer.scrollLeft = scrollLeft - walk;
+            });
+
+            videosContainer.addEventListener('touchend', () => {
+                startX = null;
+            });
+        });
+    }, []);
+
     return (
         <div>
             <Header />
@@ -22,117 +69,59 @@ export default function Security() {
                 </p>
             </div>
             <div className="container-infrastructure">
-                <div className="block">
-                    <div className="left">
-                        <h1>Современная инфраструктура</h1>
-                        <div className="video"></div>
-                    </div>
-                    <div className="right">
-                        <p>
-                            В нашей школе безопасность учащихся <br />
-                            и сотрудников — главный приоритет. <br />
-                            Мы внедрили комплексную систему <br />
-                            безопасности, которая включает в себя <br />
-                            современные технологии видеонаблюдения, <br />
-                            контроль доступа и круглосуточную охрану. <br />
-                            Школа оснащена современными системами <br />
-                            пожарной сигнализации и экстренной <br />
-                            эвакуации, регулярно проводятся учебные <br />
-                            тренировки. Все помещения и зоны отдыха <br />
-                            соответствуют строгим требованиям <br />
-                            безопасности, обеспечивая комфортную <br />
-                            и защищённую среду для обучения <br />
-                            и развития.
-                        </p>
-                        <div className="number">
-                            <h1>01</h1>
+                <div className="blocks-container">
+                    <div className="block">
+                        <h2>Безопасность</h2>
+                        <div className="slider-container">
+                            <div className="arrowleft"></div>
+                            <div className="arrowright"></div>
+                            <div className="videos-container">
+                                <div className="video"></div>
+                                <div className="video"></div>
+                                <div className="video"></div>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-                <div className="block">
-                    <div className="left">
-                        <h1>Турникетная система</h1>
-                        <div className="video"></div>
-                    </div>
-                    <div className="right">
-                        <p>
-                            В нашей школе безопасность учащихся <br />
-                            и сотрудников — главный приоритет. <br />
-                            Мы внедрили комплексную систему <br />
-                            безопасности, которая включает в себя <br />
-                            современные технологии видеонаблюдения, <br />
-                            контроль доступа и круглосуточную охрану. <br />
-                            Школа оснащена современными системами <br />
-                            пожарной сигнализации и экстренной <br />
-                            эвакуации, регулярно проводятся учебные <br />
-                            тренировки. Все помещения и зоны отдыха <br />
-                            соответствуют строгим требованиям <br />
-                            безопасности, обеспечивая комфортную <br />
-                            и защищённую среду для обучения <br />
-                            и развития.
-                        </p>
-                        <div className="number">
-                            <h1>02</h1>
+                    
+                    <div className="block">
+                        <h2>Инфраструктура</h2>
+                        <div className="slider-container">
+                            <div className="arrowleft"></div>
+                            <div className="arrowright"></div>
+                            <div className="videos-container">
+                                <div className="video"></div>
+                                <div className="video"></div>
+                                <div className="video"></div>
+                                <div className="video"></div>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-                <div className="block">
-                    <div className="left">
-                        <h1>Охрана</h1>
-                        <div className="video"></div>
-                    </div>
-                    <div className="right">
-                        <p>
-                            В нашей школе безопасность учащихся <br />
-                            и сотрудников — главный приоритет. <br />
-                            Мы внедрили комплексную систему <br />
-                            безопасности, которая включает в себя <br />
-                            современные технологии видеонаблюдения, <br />
-                            контроль доступа и круглосуточную охрану. <br />
-                            Школа оснащена современными системами <br />
-                            пожарной сигнализации и экстренной <br />
-                            эвакуации, регулярно проводятся учебные <br />
-                            тренировки. Все помещения и зоны отдыха <br />
-                            соответствуют строгим требованиям <br />
-                            безопасности, обеспечивая комфортную <br />
-                            и защищённую среду для обучения <br />
-                            и развития.
-                        </p>
-                        <div className="number">
-                            <h1>03</h1>
+                    
+                    <div className="block">
+                        <h2>Территория</h2>
+                        <div className="slider-container">
+                            <div className="arrowleft"></div>
+                            <div className="arrowright"></div>
+                            <div className="videos-container">
+                                <div className="video"></div>
+                                <div className="video"></div>
+                                <div className="video"></div>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-                <div className="block">
-                    <div className="left">
-                        <h1>Видеонаблюдение</h1>
-                        <div className="video"></div>
-                    </div>
-                    <div className="right">
-                        <p>
-                            В нашей школе безопасность учащихся <br />
-                            и сотрудников — главный приоритет. <br />
-                            Мы внедрили комплексную систему <br />
-                            безопасности, которая включает в себя <br />
-                            современные технологии видеонаблюдения, <br />
-                            контроль доступа и круглосуточную охрану. <br />
-                            Школа оснащена современными системами <br />
-                            пожарной сигнализации и экстренной <br />
-                            эвакуации, регулярно проводятся учебные <br />
-                            тренировки. Все помещения и зоны отдыха <br />
-                            соответствуют строгим требованиям <br />
-                            безопасности, обеспечивая комфортную <br />
-                            и защищённую среду для обучения <br />
-                            и развития.
-                        </p>
-                        <div className="number">
-                            <h1>04</h1>
+                    
+                    <div className="block">
+                        <h2>Питание</h2>
+                        <div className="slider-container">
+                            <div className="arrowleft"></div>
+                            <div className="arrowright"></div>
+                            <div className="videos-container">
+                                <div className="video"></div>
+                                <div className="video"></div>
+                                <div className="video"></div>
+                            </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             <Footer />

@@ -371,57 +371,7 @@ export default function MainPage() {
         </div>
 
 
-        <div className="ped_sostav" ref={pedSostavRef}>
-          <div className="arrowleft" onClick={() => scrollPedSostav('left')}></div>
-          <h1 className="h1">Педагогический состав</h1>
-          <div 
-            className="flexbox"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            <div className="div">
-              <div className="top"></div>
-              <div className="bottom">
-                <h1>Анна Александровна <br />
-                  Иванова</h1>
-                <h2>Учитель математики</h2>
-                <br /> <p>
-                  Опытный и вдохновляющий педагог, который <br /> работает в нашей школе [количество лет] лет... <br />
-                  <br />
-                  <a href="">читать далее</a>
-                </p>
-              </div>
-            </div>
-            <div className="div">
-              <div className="top"></div>
-              <div className="bottom">
-                <h1>Анна Александровна <br />
-                  Иванова</h1>
-                <h2>Учитель математики</h2>
-                <br /> <p>
-                  Опытный и вдохновляющий педагог, который <br /> работает в нашей школе [количество лет] лет... <br />
-                  <br />
-                  <a href="">читать далее</a>
-                </p>
-              </div>
-            </div>
-            <div className="div">
-              <div className="top"></div>
-              <div className="bottom">
-                <h1>Анна Александровна <br />
-                  Иванова</h1>
-                <h2>Учиель математики</h2>
-                <br /> <p>
-                  Оптный и вдохновляющий педагог, который <br /> работает в нашей школе [количество лет] лет... <br />
-                  <br />
-                  <a href="">читать далее</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="arrowright" onClick={() => scrollPedSostav('right')}></div>
-        </div>
+        
 
         <div className="infrastructure">
           <h1 className="h1">Инфраструктура и безопасность</h1>
