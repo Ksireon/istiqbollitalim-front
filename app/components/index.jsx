@@ -22,6 +22,7 @@ export default function MainPage() {
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
   const pedSostavRef = useRef(null);
+  const infrastructureRef = useRef(null);
 
   useEffect(() => {
     try {
@@ -75,6 +76,44 @@ export default function MainPage() {
       left: scrollAmount,
       behavior: 'smooth'
     });
+  };
+
+  const scrollInfrastructure = (direction) => {
+    const container = infrastructureRef.current?.querySelector('.infrastructurevids_grid');
+    if (!container) return;
+
+    const scrollAmount = direction === 'left' ? -320 : 320;
+    
+    container.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  };
+
+  const handleInfrastructureTouchStart = (e) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleInfrastructureTouchMove = (e) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
+
+  const handleInfrastructureTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      scrollInfrastructure('right');
+    }
+    if (isRightSwipe) {
+      scrollInfrastructure('left');
+    }
+
+    setTouchStart(null);
+    setTouchEnd(null);
   };
 
   if (hasError) {
@@ -175,7 +214,7 @@ export default function MainPage() {
         <Header />
         <main ref={mainRef}>
           <div className="blueblackfon"></div>
-          <div className="left" ref={leftRef}><h1>Ваша ракета к успеху - <br /> это образование</h1></div>
+          <div className="left" ref={leftRef}><h1>Istiqbolli ta'lim - школа, где качество образования - не просто звук!</h1></div>
           <div className="red"></div>
           <div className="right" ref={rightRef}>
             <div className="form">
@@ -309,7 +348,7 @@ export default function MainPage() {
         </div>
 
 
-        <div className="raspisanie">
+        {/* <div className="raspisanie">
           <h1>Расписание открытых уроков</h1>
           <div className="container">
             <div className="blocks ximiya">
@@ -361,7 +400,7 @@ export default function MainPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="formblock2">
           <div className="center">
@@ -375,30 +414,31 @@ export default function MainPage() {
 
         <div className="infrastructure">
           <h1 className="h1">Инфраструктура и безопасность</h1>
-          <div className="arrowleft"></div>
-          <div className="flexbox">
-
-            <div className="div">
-              <div className="top"></div>
-
+          <div className="container" ref={infrastructureRef}>
+            <div className="arrowleft" onClick={() => scrollInfrastructure('left')}></div>
+            <div className="infrastructurevids_grid"
+              onTouchStart={handleInfrastructureTouchStart}
+              onTouchMove={handleInfrastructureTouchMove}
+              onTouchEnd={handleInfrastructureTouchEnd}
+            >
+              <div className="block">
+                <div className="image"></div>
+                <h3>Турникетная система</h3>
+                {/* <p>Оборудованные всем необходимым для комфортного обучения</p> */}
+              </div>
+              <div className="block">
+                <div className="image"></div>
+                <h3>Охрана</h3>
+                {/* <p>Просторный зал с современным спортивным инвентарем</p> */}
+              </div>
+              <div className="block">
+                <div className="image"></div>
+                <h3>Видеонаблюдение </h3>
+                {/* <p>Уютная столовая с качественным питанием</p> */}
+              </div>
             </div>
-            <div className="div">
-              <div className="top"></div>
-
-            </div>
-
-            <div className="div">
-              <div className="top"></div>
-
-            </div>
-            <div className="div">
-              <div className="top"></div>
-
-            </div>
-
-
+            <div className="arrowright" onClick={() => scrollInfrastructure('right')}></div>
           </div>
-          <div className="arrowright"></div>
 
 
           <div className="text">
