@@ -1961,7 +1961,7 @@ footer {
     .adressblock {
         width: 720px;
         height: 720px;
-        background-color: red;
+            background-color: red;
         position: absolute;
         top: 340px;
         left: 120px;
@@ -7125,3 +7125,164 @@ footer {
     }
 }
 // ... existing code ...
+
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    .container-edu {
+        height: auto;
+        min-height: 2500px;
+
+        .text-edu,
+        .text-edu2 {
+            width: 90%;
+            height: auto;
+            margin: 60px auto;
+
+            h1 {
+                font-size: 40px;
+            }
+
+            p {
+                font-size: 24px;
+                line-height: 1.5;
+            }
+        }
+
+        .flexbox-edu {
+            width: 90%;
+            height: 400px;
+            margin: 250px auto 0;
+
+            .div {
+                width: 30%;
+                height: 100%;
+            }
+        }
+    }
+
+    .container-platforms {
+        width: 90%;
+        margin: 80px auto 0;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        .dev,
+        .dev2,
+        .dev3,
+        .dev4 {
+            height: auto;
+            min-height: 400px;
+            margin-top: 350px;
+
+            h2 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 24px;
+            }
+
+            .video {
+                width: 380px;
+                height: 340px;
+            }
+
+            .flex {
+                max-width: 50%;
+            }
+        }
+    }
+
+    .container-hobbies {
+        width: 90%;
+        margin: 100px auto 0;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        .chess {
+            height: auto;
+            min-height: 900px;
+
+            .flex {
+                h1 {
+                    font-size: 30px;
+                }
+            }
+
+            .text-container-hobbies {
+                p {
+                    font-size: 24px;
+                    line-height: 1.5;
+                }
+            }
+
+            .flex-boxes-container-hobbies {
+                width: 90%;
+                margin: 80px auto 0;
+
+                .div {
+                    width: 360px;
+                    height: 360px;
+                }
+            }
+        }
+    }
+}
+// ... existing code ...
+
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    // ... existing code ...
+    
+    .container-platforms {
+        // ... existing code ...
+
+        .dev2,
+        .dev4 {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            margin-top: 300px;
+
+            .flex {
+                position: relative;
+                right: auto;
+                top: auto;
+                max-width: 45%;
+                order: 2;
+                padding-right: 20px;
+
+                h2 {
+                    font-size: 28px;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    font-size: 22px;
+                    line-height: 1.5;
+                }
+            }
+
+            .video {
+                position: relative;
+                left: auto;
+                top: auto;
+                width: 45%;
+                height: 320px;
+                order: 1;
+                border-radius: 10px;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.02);
+                }
+            }
+        }
+    }
+    // ... existing code ...
+}
