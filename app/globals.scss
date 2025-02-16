@@ -2411,75 +2411,51 @@ footer {
 
 }
 
+.container-blog,
+.container-blog2,
+.container-blog3 {
+    width: 100%;
+    height: auto;
+    margin: 30px 0 0;
+    padding: 0 15px;
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .div {
+        min-width: 280px;
+        height: 320px;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        border-radius: 12px;
+        background-color: #D9D9D9;
+        transition: transform 0.3s ease;
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+}
+
 .raspisanie-blog {
-    width: 85%;
-    height: 175vh;
-    margin: 90px auto 0;
-    font-family: GilroyR;
+    width: 100%;
+    height: auto;
+    margin: 40px 0;
+    padding: 0 20px;
 
     h1 {
-        font-size: 50px;
-        color: #0F1F44;
-    }
-
-    .november {
-        margin-top: 100px;
-        width: 100%;
-        height: auto;
-        position: relative;
-
-        .left {
-            width: 65%;
-            height: auto;
-
-            h1 {
-                font-size: 35px;
-            }
-
-            p {
-                font-size: 30px;
-            }
-        }
-
-        .right {
-            position: absolute;
-            right: 0;
-            top: 55px;
-
-            p {
-                font-size: 30px;
-            }
-        }
-    }
-
-    .december {
-        margin-top: 400px;
-        width: 100%;
-        height: auto;
-        position: relative;
-
-        .left {
-            width: 65%;
-            height: auto;
-
-            h1 {
-                font-size: 35px;
-            }
-
-            p {
-                font-size: 30px;
-            }
-        }
-
-        .right {
-            position: absolute;
-            right: 0;
-            top: 60px;
-
-            p {
-                font-size: 30px;
-            }
-        }
+        font-size: 28px;
+        margin-bottom: 30px;
+        text-align: left;
     }
 }
 
@@ -7016,3 +6992,136 @@ footer {
         }
     }
 }
+
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    .about-page {
+        margin-top: 0;
+        overflow-x: hidden;
+        
+        .container-about {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #0F1F44;
+            padding: 20px;
+
+            .top {
+                width: 95%;
+                margin: 0 auto;
+                padding: 30px 0;
+
+                h1 {
+                    font-size: 32px;
+                    color: white;
+                    margin-bottom: 20px;
+                    text-align: left;
+                }
+
+                p {
+                    color: white;
+                    font-size: 16px;
+                    line-height: 1.6;
+                    text-align: left;
+                    max-width: 100%;
+                }
+            }
+
+            .bottom {
+                width: 95%;
+                margin: 0 auto;
+                padding: 30px 0;
+
+                .istorii_uspexa {
+                    width: 100%;
+
+                    h1.h1white {
+                        font-size: 32px;
+                        margin-bottom: 30px;
+                        text-align: left;
+                    }
+
+                    .flexbox {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 15px;
+
+                        .dev {
+                            flex: 1;
+                            height: 250px;
+                            background-color: rgba(255, 255, 255, 0.1);
+                            border-radius: 8px;
+                        }
+
+                        .arrowleft, .arrowright {
+                            width: 35px;
+                            height: 35px;
+                            cursor: pointer;
+                            transition: opacity 0.3s;
+                            flex-shrink: 0;
+
+                            &:hover {
+                                opacity: 0.8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    // ... existing code ...
+
+    .raspisanie-blog {
+        width: 90%;
+        height: auto;
+        margin: 60px auto;
+        font-family: GilroyR;
+
+        h1 {
+            font-size: 40px;
+            color: #0F1F44;
+            margin-bottom: 40px;
+        }
+
+        .november, .december {
+            width: 100%;
+            height: auto;
+            position: relative;
+            margin-top: 60px;
+
+            .left {
+                width: 70%;
+                height: auto;
+
+                h1 {
+                    font-size: 28px;
+                    margin-bottom: 25px;
+                }
+
+                p {
+                    font-size: 24px;
+                    line-height: 1.5;
+                }
+            }
+
+            .right {
+                position: absolute;
+                right: 0;
+                top: 45px;
+
+                p {
+                    font-size: 24px;
+                    line-height: 1.5;
+                }
+            }
+        }
+
+        .december {
+            margin-top: 300px;
+        }
+    }
+}
+// ... existing code ...
