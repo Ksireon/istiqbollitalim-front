@@ -214,8 +214,7 @@ export default function MainPage() {
         <Header />
         <main ref={mainRef}>
           <div className="blueblackfon"></div>
-          {/* <div className="left" ref={leftRef}><h1>Istiqbolli ta'lim - школа, где качество образования - не просто звук!</h1></div> */}
-          <div className="left" ref={leftRef}><h1>hello world!</h1></div>
+          <div className="left" ref={leftRef}><h1>Istiqbolli ta'lim - школа, где качество образования - не просто звук!</h1></div>
           <div className="red"></div>
           <div className="right" ref={rightRef}>
             <div className="form">
