@@ -26,17 +26,7 @@ export default function Reviews() {
                     <div className="vid"></div>
                 </div>
             </div>
-            <div className="istorii_uspexa-reviews istorii_uspexa">
-                <h1>Истории успеха</h1>
-                <div className="flexbox">
-                    <div className="arrowleft"></div>
-                    <div className="dev"></div>
-                    <div className="dev"></div>
-                    <div className="dev"></div>
-                    <div className="dev"></div>
-                    <div className="arrowright"></div>
-                </div>
-            </div>
+            
             <Footer />
         </div>
     );

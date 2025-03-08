@@ -25,17 +25,7 @@ export default function About() {
                     </p>
                 </div>
                 <div className="bottom">
-                    <div className="istorii_uspexa">
-                        <h1 className='h1white'>Истории успеха</h1>
-                        <div className="flexbox">
-                            <div className="arrowleft"></div>
-                            <div className="dev"></div>
-                            <div className="dev"></div>
-                            <div className="dev"></div>
-                            <div className="dev"></div>
-                            <div className="arrowright"></div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <Footer />
