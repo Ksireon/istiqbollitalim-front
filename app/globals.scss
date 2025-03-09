@@ -2498,6 +2498,7 @@ footer {
             width: 380px;
             height: 400px;
             background-color: #D9D9D9;
+            position: relative;
         }
     }
 
@@ -2512,6 +2513,7 @@ footer {
             width: 380px;
             height: 400px;
             background-color: #D9D9D9;
+            position: relative;
         }
     }
 
@@ -2526,6 +2528,7 @@ footer {
             width: 380px;
             height: 400px;
             background-color: #D9D9D9;
+            position: relative;
         }
     }
 
@@ -2684,6 +2687,9 @@ footer {
                 filter: invert(100%);
                 cursor: pointer;
                 transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
                 &:hover {
                     background-color: darken(#F0E0BB, 10%);
@@ -2693,11 +2699,19 @@ footer {
             .arrowleft {
                 left: 10px;
                 transform: translateY(-50%) scaleX(-1);
+                
+                &:before {
+                    transform: rotate(-135deg);
+                }
             }
 
             .arrowright {
                 right: 10px;
                 transform: translateY(-50%);
+                
+                &:before {
+                    transform: rotate(45deg);
+                }
             }
 
             .videos-container {
@@ -2709,6 +2723,8 @@ footer {
                 scroll-behavior: smooth;
                 gap: 20px;
                 padding: 0 20px;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
 
                 &::-webkit-scrollbar {
                     display: none;
@@ -2721,6 +2737,14 @@ footer {
                     border-radius: 10px;
                     scroll-snap-align: start;
                     flex-shrink: 0;
+                    position: relative;
+                    overflow: hidden;
+                    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
             }
         }
@@ -2767,6 +2791,11 @@ footer {
                     transform: translateY(-50%);
                     background-color: rgba(240, 224, 187, 0.9);
                     z-index: 10;
+                    background-image: url(./icons/right-arrow.png);
+                    background-position: center;
+                    background-size: 50%;
+                    background-repeat: no-repeat;
+                    filter: invert(100%);
 
                     &:active {
                         transform: translateY(-50%) scale(0.95);
@@ -3761,6 +3790,7 @@ footer {
 
 .container-hobbies {
     width: 85%;
+    max-width: 1400px;
     height: auto;
     margin: 150px auto 0;
     font-family: GilroyR;
@@ -3768,38 +3798,148 @@ footer {
     h1 {
         color: #0F1F44;
         font-size: 50px;
+        margin-bottom: 60px;
+        text-align: center;
+        position: relative;
+        overflow: visible;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: #18A3AD;
+        }
     }
 
     .chess {
         width: 100%;
-        height: 1100px;
-        margin-top: 50px;
+        height: auto;
+        margin-top: 80px;
+        margin-bottom: 100px;
+        padding: 50px;
+        background-color: #f9f9f9;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: #18A3AD;
+        }
+        
+        &:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        &:first-of-type {
+            margin-top: 50px;
+        }
 
         .flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            
             h1 {
                 font-size: 35px;
+                margin: 0;
+                text-align: left;
+                position: relative;
+                padding-bottom: 10px;
+                
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 80px;
+                    height: 3px;
+                    background-color: #0F1F44;
+                    transform: none;
+                }
+            }
+            
+            .img {
+                display: none;
             }
         }
 
         .text-container-hobbies {
             p {
-                font-size: 30px;
+                font-size: 20px;
+                line-height: 1.7;
+                color: #333;
+                margin-bottom: 40px;
+                padding: 0 20px;
+                text-align: justify;
             }
         }
 
         .flex-boxes-container-hobbies {
-            width: 85%;
+            width: 100%;
             height: auto;
-            margin: 120px auto 0;
+            margin: 40px auto 0;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
 
             .div {
-                width: 440px;
-                height: 440px;
+                width: 70%;
+                max-width: 700px;
+                height: 400px;
+                border-radius: 15px;
                 background-color: #D9D9D9;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: transform 0.3s ease;
+                
+                &:hover {
+                    /* Removed scale effect to prevent shaking */
+                }
             }
         }
+    }
+}
+
+/* Media query for 1366px viewport width */
+@media screen and (width: 1366px) {
+    .container-hobbies {
+        .chess {
+            .flex-boxes-container-hobbies {
+                .div {
+                    width: 90%;
+                    max-width: 900px;
+                }
+            }
+        }
+    }
+}
+
+.school-blog {
+    width: 100%;
+    height: auto;
+    font-family: GilroyR;
+    background-color: #0F1F44;
+
+    h1 {
+        color: white;
+        font-size: 50px;
+        margin: 40px 130px 0;
+    }
+
+    .container-blog {
+        width: 85%;
     }
 }
 
@@ -3826,6 +3966,7 @@ footer {
             width: 380px;
             height: 400px;
             background-color: #D9D9D9;
+            position: relative;
         }
     }
 
@@ -3840,6 +3981,7 @@ footer {
             width: 380px;
             height: 400px;
             background-color: #D9D9D9;
+            position: relative;
         }
     }
 
@@ -3854,6 +3996,7 @@ footer {
             width: 380px;
             height: 400px;
             background-color: #D9D9D9;
+            position: relative;
         }
     }
 
@@ -4036,6 +4179,9 @@ footer {
                 filter: invert(100%);
                 cursor: pointer;
                 transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
                 &:hover {
                     background-color: darken(#F0E0BB, 10%);
@@ -4045,11 +4191,19 @@ footer {
             .arrowleft {
                 left: 10px;
                 transform: translateY(-50%) scaleX(-1);
+                
+                &:before {
+                    transform: rotate(-135deg);
+                }
             }
 
             .arrowright {
                 right: 10px;
                 transform: translateY(-50%);
+                
+                &:before {
+                    transform: rotate(45deg);
+                }
             }
 
             .videos-container {
@@ -4061,6 +4215,8 @@ footer {
                 scroll-behavior: smooth;
                 gap: 20px;
                 padding: 0 20px;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
 
                 &::-webkit-scrollbar {
                     display: none;
@@ -4073,6 +4229,14 @@ footer {
                     border-radius: 10px;
                     scroll-snap-align: start;
                     flex-shrink: 0;
+                    position: relative;
+                    overflow: hidden;
+                    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
             }
         }
@@ -4119,6 +4283,11 @@ footer {
                     transform: translateY(-50%);
                     background-color: rgba(240, 224, 187, 0.9);
                     z-index: 10;
+                    background-image: url(./icons/right-arrow.png);
+                    background-position: center;
+                    background-size: 50%;
+                    background-repeat: no-repeat;
+                    filter: invert(100%);
 
                     &:active {
                         transform: translateY(-50%) scale(0.95);
@@ -5224,6 +5393,7 @@ footer {
 
 .container-hobbies {
     width: 85%;
+    max-width: 1400px;
     height: auto;
     margin: 150px auto 0;
     font-family: GilroyR;
@@ -5231,38 +5401,148 @@ footer {
     h1 {
         color: #0F1F44;
         font-size: 50px;
+        margin-bottom: 60px;
+        text-align: center;
+        position: relative;
+        overflow: visible;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: #18A3AD;
+        }
     }
 
     .chess {
         width: 100%;
-        height: 1100px;
-        margin-top: 50px;
+        height: auto;
+        margin-top: 80px;
+        margin-bottom: 100px;
+        padding: 50px;
+        background-color: #f9f9f9;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: #18A3AD;
+        }
+        
+        &:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        &:first-of-type {
+            margin-top: 50px;
+        }
 
         .flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            
             h1 {
                 font-size: 35px;
+                margin: 0;
+                text-align: left;
+                position: relative;
+                padding-bottom: 10px;
+                
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 80px;
+                    height: 3px;
+                    background-color: #0F1F44;
+                    transform: none;
+                }
+            }
+            
+            .img {
+                display: none;
             }
         }
 
         .text-container-hobbies {
             p {
-                font-size: 30px;
+                font-size: 20px;
+                line-height: 1.7;
+                color: #333;
+                margin-bottom: 40px;
+                padding: 0 20px;
+                text-align: justify;
             }
         }
 
         .flex-boxes-container-hobbies {
-            width: 85%;
+            width: 100%;
             height: auto;
-            margin: 120px auto 0;
+            margin: 40px auto 0;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
 
             .div {
-                width: 440px;
-                height: 440px;
+                width: 70%;
+                max-width: 700px;
+                height: 400px;
+                border-radius: 15px;
                 background-color: #D9D9D9;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: transform 0.3s ease;
+                
+                &:hover {
+                    /* Removed scale effect to prevent shaking */
+                }
             }
         }
+    }
+}
+
+/* Media query for 1366px viewport width */
+@media screen and (width: 1366px) {
+    .container-hobbies {
+        .chess {
+            .flex-boxes-container-hobbies {
+                .div {
+                    width: 90%;
+                    max-width: 900px;
+                }
+            }
+        }
+    }
+}
+
+.school-blog {
+    width: 100%;
+    height: auto;
+    font-family: GilroyR;
+    background-color: #0F1F44;
+
+    h1 {
+        color: white;
+        font-size: 50px;
+        margin: 40px 130px 0;
+    }
+
+    .container-blog {
+        width: 85%;
     }
 }
 
@@ -5289,6 +5569,7 @@ footer {
             width: 380px;
             height: 400px;
             background-color: #D9D9D9;
+            position: relative;
         }
     }
 
@@ -5303,6 +5584,7 @@ footer {
             width: 380px;
             height: 400px;
             background-color: #D9D9D9;
+            position: relative;
         }
     }
 
@@ -5317,6 +5599,7 @@ footer {
             width: 380px;
             height: 400px;
             background-color: #D9D9D9;
+            position: relative;
         }
     }
 
@@ -6216,6 +6499,11 @@ footer {
                     transform: translateY(-50%);
                     background-color: rgba(240, 224, 187, 0.9);
                     z-index: 10;
+                    background-image: url(./icons/right-arrow.png);
+                    background-position: center;
+                    background-size: 50%;
+                    background-repeat: no-repeat;
+                    filter: invert(100%);
 
                     &:active {
                         transform: translateY(-50%) scale(0.95);
@@ -6312,6 +6600,7 @@ footer {
                 border-radius: 12px;
                 background-color: #D9D9D9;
                 transition: transform 0.3s ease;
+                position: relative;
 
                 &:active {
                     transform: scale(0.98);
@@ -7197,7 +7486,7 @@ footer {
                 transition: transform 0.3s ease;
 
                 &:hover {
-                    transform: scale(1.02);
+                    /* Removed scale effect to prevent shaking */
                 }
             }
         }
@@ -7230,7 +7519,7 @@ footer {
                 transition: transform 0.3s ease;
 
                 &:hover {
-                    transform: scale(1.02);
+                    /* Removed scale effect to prevent shaking */
                 }
             }
         }
@@ -7259,7 +7548,7 @@ footer {
                 transition: transform 0.3s ease;
 
                 &:hover {
-                    transform: scale(1.02);
+                    /* Removed scale effect to prevent shaking */
                 }
             }
         }

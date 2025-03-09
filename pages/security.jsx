@@ -1,9 +1,34 @@
 import '../app/globals.scss'
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function Security() {
+    // Use require to properly load images
+    const turniketImages = [
+        require('../security_img/turniket_system/photo_2025-01-30_00-57-45.jpg'),
+        require('../security_img/turniket_system/photo_2025-01-30_00-57-48.jpg'),
+        require('../security_img/turniket_system/photo_2025-01-30_00-57-49.jpg'),
+        require('../security_img/turniket_system/photo_2025-01-30_00-57-51.jpg'),
+        require('../security_img/turniket_system/photo_2025-01-30_00-57-53.jpg'),
+        require('../security_img/turniket_system/photo_2025-01-30_00-57-55.jpg')
+    ];
+    
+    const oxranaImages = [
+        require('../security_img/oxrana/photo_2025-01-30_00-58-20.jpg'),
+        require('../security_img/oxrana/photo_2025-01-30_00-58-21.jpg'),
+        require('../security_img/oxrana/photo_2025-01-30_00-58-22.jpg'),
+        require('../security_img/oxrana/photo_2025-01-30_00-58-23.jpg')
+    ];
+    
+    const videoImages = [
+        require('../security_img/videonablyudenie/photo_2025-01-30_00-57-55 (2).jpg'),
+        require('../security_img/videonablyudenie/photo_2025-01-30_00-57-56.jpg'),
+        require('../security_img/videonablyudenie/photo_2025-01-30_00-57-57.jpg'),
+        require('../security_img/videonablyudenie/photo_2025-01-30_00-57-59.jpg'),
+        require('../security_img/videonablyudenie/photo_2025-01-30_00-58-24.jpg')
+    ];
     useEffect(() => {
         const sliders = document.querySelectorAll('.slider-container');
 
@@ -75,9 +100,16 @@ export default function Security() {
                             <div className="arrowleft"></div>
                             <div className="arrowright"></div>
                             <div className="videos-container">
-                                <div className="video"></div>
-                                <div className="video"></div>
-                                <div className="video"></div>
+                                {turniketImages.map((img, index) => (
+                                    <div className="video" key={`turniket-${index}`}>
+                                        <Image 
+                                            src={img} 
+                                            alt={`Турникетная система ${index + 1}`} 
+                                            fill 
+                                            style={{ objectFit: 'cover' }} 
+                                        />
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -88,10 +120,16 @@ export default function Security() {
                             <div className="arrowleft"></div>
                             <div className="arrowright"></div>
                             <div className="videos-container">
-                                <div className="video"></div>
-                                <div className="video"></div>
-                                <div className="video"></div>
-                                <div className="video"></div>
+                                {oxranaImages.map((img, index) => (
+                                    <div className="video" key={`oxrana-${index}`}>
+                                        <Image 
+                                            src={img} 
+                                            alt={`Охрана ${index + 1}`} 
+                                            fill 
+                                            style={{ objectFit: 'cover' }} 
+                                        />
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -102,9 +140,16 @@ export default function Security() {
                             <div className="arrowleft"></div>
                             <div className="arrowright"></div>
                             <div className="videos-container">
-                                <div className="video"></div>
-                                <div className="video"></div>
-                                <div className="video"></div>
+                                {videoImages.map((img, index) => (
+                                    <div className="video" key={`video-${index}`}>
+                                        <Image 
+                                            src={img} 
+                                            alt={`Видеонаблюдение ${index + 1}`} 
+                                            fill 
+                                            style={{ objectFit: 'cover' }} 
+                                        />
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

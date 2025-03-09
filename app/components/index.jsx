@@ -8,7 +8,8 @@ import Zapros4 from "./zapros4";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import ChildRewiev from "./otzivi_detey"
+import ParentsRewiev from './otzivi_roditeley';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -319,14 +320,7 @@ export default function MainPage() {
         </div>
       </div>
 
-      <div className="otzivi">
-        <h1>Отзывы родителей</h1>
-        <div className="gridsvid">
-          <div className="vid"></div>
-          <div className="vid"></div>
-          <div className="vid"></div>
-        </div>
-      </div>
+      <ParentsRewiev />
 
 
       <div className="zanyatiya" ref={(el) => (sectionsRef.current[0] = el)}>
@@ -506,29 +500,7 @@ export default function MainPage() {
           <Zapros3 />
         </div>
       </div>
-      <div className="otzivi_detey">
-        <h1>Отзывы учеников</h1>
-        <div className="slider-container">
-          <div className="arrowleft" onClick={() => {
-            const container = document.querySelector('.otzivi_detey .videos-container');
-            const scrollAmount = container.clientWidth;
-            container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-          }}></div>
-          <div className="videos-container">
-            <div className="vid"></div>
-            <div className="vid"></div>
-            <div className="vid"></div>
-            <div className="vid"></div>
-            <div className="vid"></div>
-            <div className="vid"></div>
-          </div>
-          <div className="arrowright" onClick={() => {
-            const container = document.querySelector('.otzivi_detey .videos-container');
-            const scrollAmount = container.clientWidth;
-            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-          }}></div>
-        </div>
-      </div>
+      <ChildRewiev />
       {/* <div className="istorii_uspexa">
           <h1>Истории упеха</h1>
           <div className="flexbox-container">

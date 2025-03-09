@@ -2,16 +2,13 @@ export default function Hobbies() {
     return (
         <div>
             <div className="container-hobbies">
-                <h1>
-                    Кружки
-                </h1>
+                <h1>Кружки</h1>
+                
                 <div className="chess">
                     <div className="flex">
                         <h1>Шахматы</h1>
                         <div className="img"></div>
                     </div>
-                    <br />
-                    <br />
                     <div className="text-container-hobbies">
                         <p>
                             На занятиях дети изучают основы шахмат, развивают логику, внимание и стратегическое мышление.
@@ -19,11 +16,15 @@ export default function Hobbies() {
                         </p>
                     </div>
                     <div className="flex-boxes-container-hobbies">
-                        <div className="div"></div>
-                        <div className="div"></div>
-                        <div className="div"></div>
+                        <iframe
+                            className="div"
+                            src="https://www.youtube-nocookie.com/embed/6RzxQGiYW6M"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
                     </div>
-
                 </div>
 
                 <div className="chess">
@@ -31,8 +32,6 @@ export default function Hobbies() {
                         <h1>Карате</h1>
                         <div className="img"></div>
                     </div>
-                    <br />
-                    <br />
                     <div className="text-container-hobbies">
                         <p>
                             Карате —  отличная возможность для детей развить физическую силу, гибкость и выносливость. Занятия помогают укрепить здоровье, учат дисциплине, самоконтролю и уважению к окружающим.
@@ -42,19 +41,22 @@ export default function Hobbies() {
                         </p>
                     </div>
                     <div className="flex-boxes-container-hobbies">
-                        <div className="div"></div>
-                        <div className="div"></div>
-                        <div className="div"></div>
+                        <iframe
+                            className="div"
+                            src="https://www.youtube-nocookie.com/embed/DKqvF9RdaCk"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
                     </div>
-
                 </div>
+                
                 <div className="chess">
                     <div className="flex">
                         <h1>Ментальная арифметика</h1>
                         <div className="img"></div>
                     </div>
-                    <br />
-                    <br />
                     <div className="text-container-hobbies">
                         <p>
                             Учит детей находить нестандартные решения и применять разные стратегии, развивая мышление и анализ.
@@ -63,19 +65,22 @@ export default function Hobbies() {
                         </p>
                     </div>
                     <div className="flex-boxes-container-hobbies">
-                        <div className="div"></div>
-                        <div className="div"></div>
-                        <div className="div"></div>
+                        <iframe
+                            className="div"
+                            src="https://www.youtube-nocookie.com/embed/4_PKBMEjlr0"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
                     </div>
-
                 </div>
+                
                 <div className="chess">
                     <div className="flex">
                         <h1>Художественная гимнастика</h1>
                         <div className="img"></div>
                     </div>
-                    <br />
-                    <br />
                     <div className="text-container-hobbies">
                         <p>
                             Помогает детям развивать гибкость, координацию и укреплять мышцы. Формирует чувство ритма, грацию и правильную осанку.
@@ -84,19 +89,22 @@ export default function Hobbies() {
                         </p>
                     </div>
                     <div className="flex-boxes-container-hobbies">
-                        <div className="div"></div>
-                        <div className="div"></div>
-                        <div className="div"></div>
+                        <iframe
+                            className="div"
+                            src="https://www.youtube-nocookie.com/embed/RwaPTJxVZyU"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
                     </div>
-
                 </div>
+                
                 <div className="chess">
                     <div className="flex">
                         <h1>Танцы</h1>
                         <div className="img"></div>
                     </div>
-                    <br />
-                    <br />
                     <div className="text-container-hobbies">
                         <p>
                             Помогают детям развивать координацию, гибкость и чувство ритма. Дети изучают как национальные, так и современные танцы, что расширяет их кругозор и прививает уважение к культуре.
@@ -104,19 +112,22 @@ export default function Hobbies() {
                         </p>
                     </div>
                     <div className="flex-boxes-container-hobbies">
-                        <div className="div"></div>
-                        <div className="div"></div>
-                        <div className="div"></div>
+                        <iframe
+                            className="div"
+                            src="https://www.youtube-nocookie.com/embed/6RzxQGiYW6M"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
                     </div>
-
                 </div>
+                
                 <div className="chess">
                     <div className="flex">
                         <h1>Мнемоника</h1>
                         <div className="img"></div>
                     </div>
-                    <br />
-                    <br />
                     <div className="text-container-hobbies">
                         <p>
                             Занятия мнемоникой помогают развивать память и улучшать способность запоминать большие объемы информации. Они учат детей находить ассоциации, что развивает творческое мышление и воображение.
@@ -125,19 +136,22 @@ export default function Hobbies() {
                         </p>
                     </div>
                     <div className="flex-boxes-container-hobbies">
-                        <div className="div"></div>
-                        <div className="div"></div>
-                        <div className="div"></div>
+                        <iframe
+                            className="div"
+                            src="https://www.youtube-nocookie.com/embed/6RzxQGiYW6M"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
                     </div>
-
                 </div>
+                
                 <div className="chess">
                     <div className="flex">
                         <h1>Корейский язык</h1>
                         <div className="img"></div>
                     </div>
-                    <br />
-                    <br />
                     <div className="text-container-hobbies">
                         <p>
                             Изучение корейского языка в нашей школе помогает детям развивать память, логику и внимание.
@@ -146,19 +160,22 @@ export default function Hobbies() {
                         </p>
                     </div>
                     <div className="flex-boxes-container-hobbies">
-                        <div className="div"></div>
-                        <div className="div"></div>
-                        <div className="div"></div>
+                        <iframe
+                            className="div"
+                            src="https://www.youtube-nocookie.com/embed/6RzxQGiYW6M"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
                     </div>
-
                 </div>
+                
                 <div className="chess">
                     <div className="flex">
                         <h1>Китайский язык</h1>
                         <div className="img"></div>
                     </div>
-                    <br />
-                    <br />
                     <div className="text-container-hobbies">
                         <p>
                             Изучение китайского языка в нашей школе проводится в сотрудничестве с Университетом Конфуция.
@@ -167,19 +184,22 @@ export default function Hobbies() {
                         </p>
                     </div>
                     <div className="flex-boxes-container-hobbies">
-                        <div className="div"></div>
-                        <div className="div"></div>
-                        <div className="div"></div>
+                        <iframe
+                            className="div"
+                            src="https://www.youtube-nocookie.com/embed/eQ_NIMEQMBE"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
                     </div>
-
                 </div>
+                
                 <div className="chess">
                     <div className="flex">
                         <h1>Speaking club</h1>
                         <div className="img"></div>
                     </div>
-                    <br />
-                    <br />
                     <div className="text-container-hobbies">
                         <p>
                             Speaking Club помогает ученикам улучшить навыки общения на английском языке.
@@ -188,11 +208,15 @@ export default function Hobbies() {
                         </p>
                     </div>
                     <div className="flex-boxes-container-hobbies">
-                        <div className="div"></div>
-                        <div className="div"></div>
-                        <div className="div"></div>
+                        <iframe
+                            className="div"
+                            src="https://www.youtube-nocookie.com/embed/9S3RAzN8Xrk"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
                     </div>
-
                 </div>
             </div>
         </div>
