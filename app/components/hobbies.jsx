@@ -3,7 +3,7 @@ export default function Hobbies() {
         <div>
             <div className="container-hobbies">
                 <h1>Кружки</h1>
-                
+
                 <div className="chess">
                     <div className="flex">
                         <h1>Шахматы</h1>
@@ -51,7 +51,7 @@ export default function Hobbies() {
                         </iframe>
                     </div>
                 </div>
-                
+
                 <div className="chess">
                     <div className="flex">
                         <h1>Ментальная арифметика</h1>
@@ -75,7 +75,7 @@ export default function Hobbies() {
                         </iframe>
                     </div>
                 </div>
-                
+
                 <div className="chess">
                     <div className="flex">
                         <h1>Художественная гимнастика</h1>
@@ -99,7 +99,7 @@ export default function Hobbies() {
                         </iframe>
                     </div>
                 </div>
-                
+
                 <div className="chess">
                     <div className="flex">
                         <h1>Танцы</h1>
@@ -114,7 +114,7 @@ export default function Hobbies() {
                     <div className="flex-boxes-container-hobbies">
                         <iframe
                             className="div"
-                            src="https://www.youtube-nocookie.com/embed/6RzxQGiYW6M"
+                            src="https://www.youtube-nocookie.com/embed/gvyz3bbXLPQ"
                             title="YouTube video player"
                             frameBorder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -122,7 +122,7 @@ export default function Hobbies() {
                         </iframe>
                     </div>
                 </div>
-                
+
                 <div className="chess">
                     <div className="flex">
                         <h1>Мнемоника</h1>
@@ -138,7 +138,7 @@ export default function Hobbies() {
                     <div className="flex-boxes-container-hobbies">
                         <iframe
                             className="div"
-                            src="https://www.youtube-nocookie.com/embed/6RzxQGiYW6M"
+                            src="https://www.youtube-nocookie.com/embed/JMxNbd2DE2Q"
                             title="YouTube video player"
                             frameBorder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -146,7 +146,7 @@ export default function Hobbies() {
                         </iframe>
                     </div>
                 </div>
-                
+
                 <div className="chess">
                     <div className="flex">
                         <h1>Корейский язык</h1>
@@ -162,7 +162,7 @@ export default function Hobbies() {
                     <div className="flex-boxes-container-hobbies">
                         <iframe
                             className="div"
-                            src="https://www.youtube-nocookie.com/embed/6RzxQGiYW6M"
+                            src="https://www.youtube-nocookie.com/embed/SIY6yqyVuyQ"
                             title="YouTube video player"
                             frameBorder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -170,7 +170,7 @@ export default function Hobbies() {
                         </iframe>
                     </div>
                 </div>
-                
+
                 <div className="chess">
                     <div className="flex">
                         <h1>Китайский язык</h1>
@@ -194,7 +194,7 @@ export default function Hobbies() {
                         </iframe>
                     </div>
                 </div>
-                
+
                 <div className="chess">
                     <div className="flex">
                         <h1>Speaking club</h1>
