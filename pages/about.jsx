@@ -1,6 +1,7 @@
 import '../app/globals.scss'
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import VipuskRewiev from '@/app/components/otzivi_vipusknikov'
 
 export default function About() {
     return (
@@ -25,7 +26,7 @@ export default function About() {
                     </p>
                 </div>
                 <div className="bottom">
-                    
+                <VipuskRewiev />
                 </div>
             </div>
             <Footer />

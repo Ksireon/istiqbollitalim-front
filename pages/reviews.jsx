@@ -3,6 +3,8 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import ChildRewiev from '@/app/components/otzivi_detey';
 import ParentsRewiev from '@/app/components/otzivi_roditeley';
+import VipuskRewiev from '@/app/components/otzivi_vipusknikov'
+
 
 export default function Reviews() {
     return (
@@ -15,6 +17,7 @@ export default function Reviews() {
             <br />
             <ChildRewiev />
             <br />
+            <VipuskRewiev />
             <Footer />
         </div>
     );

@@ -13,7 +13,14 @@ export default function Platforms() {
                         Ученики могут тренироваться, сразу получать результаты с <br /> пояснениями и улучшать свои знания. Учителя используют платформу <br /> для создания заданий, проверки работ и отслеживания успеваемости. <br /> ЯКласс делает обучение удобным, эффективным и доступным <br /> в любое время.
 
                     </p>
-                    <div className="video"></div>
+                    <iframe
+                        className="video"
+                        src="https://www.youtube-nocookie.com/embed/OTQgWZlvZuU"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen>
+                    </iframe>
                 </div>
 
                 <div className="dev3">

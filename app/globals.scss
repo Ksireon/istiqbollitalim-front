@@ -1829,6 +1829,7 @@ main {
         position: relative;
         width: 95%;
         margin: 30px auto 0;
+        padding: 0 40px; /* Add padding to make room for the arrows */
     }
 
     .flexbox {
@@ -1869,13 +1870,13 @@ main {
         transform: translateY(-50%);
         width: 40px;
         height: 40px;
-        background-color: rgba(15, 31, 68, 0.7);
+        background-color: rgba(15, 31, 68, 0.9);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        z-index: 10;
+        z-index: 100;
         transition: background-color 0.3s ease;
         
         &:hover {
@@ -1884,7 +1885,7 @@ main {
     }
     
     .arrowleft {
-        left: -10px;
+        left: 10px;
         &:before {
             content: '';
             width: 10px;
@@ -1897,7 +1898,7 @@ main {
     }
     
     .arrowright {
-        right: -10px;
+        right: 10px;
         &:before {
             content: '';
             width: 10px;
@@ -3186,6 +3187,7 @@ footer {
         position: relative;
         width: 95%;
         margin: 30px auto 0;
+        padding: 0 40px; /* Add padding to make room for the arrows */
     }
 
     .flexbox {
@@ -3226,13 +3228,13 @@ footer {
         transform: translateY(-50%);
         width: 40px;
         height: 40px;
-        background-color: rgba(15, 31, 68, 0.7);
+        background-color: rgba(15, 31, 68, 0.9);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        z-index: 10;
+        z-index: 100;
         transition: background-color 0.3s ease;
         
         &:hover {
@@ -3241,7 +3243,7 @@ footer {
     }
     
     .arrowleft {
-        left: -10px;
+        left: 10px;
         &:before {
             content: '';
             width: 10px;
@@ -3254,7 +3256,7 @@ footer {
     }
     
     .arrowright {
-        right: -10px;
+        right: 10px;
         &:before {
             content: '';
             width: 10px;
@@ -4728,6 +4730,7 @@ footer {
         position: relative;
         width: 95%;
         margin: 30px auto 0;
+        padding: 0 40px; /* Add padding to make room for the arrows */
     }
 
     .flexbox {
@@ -4768,13 +4771,13 @@ footer {
         transform: translateY(-50%);
         width: 40px;
         height: 40px;
-        background-color: rgba(15, 31, 68, 0.7);
+        background-color: rgba(15, 31, 68, 0.9);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        z-index: 10;
+        z-index: 100;
         transition: background-color 0.3s ease;
         
         &:hover {
@@ -4783,7 +4786,7 @@ footer {
     }
     
     .arrowleft {
-        left: -10px;
+        left: 10px;
         &:before {
             content: '';
             width: 10px;
@@ -4796,7 +4799,7 @@ footer {
     }
     
     .arrowright {
-        right: -10px;
+        right: 10px;
         &:before {
             content: '';
             width: 10px;

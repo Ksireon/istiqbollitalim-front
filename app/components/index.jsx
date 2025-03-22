@@ -10,6 +10,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ChildRewiev from "./otzivi_detey"
 import ParentsRewiev from './otzivi_roditeley';
+import VipuskRewiev from './otzivi_vipusknikov';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -501,31 +502,7 @@ export default function MainPage() {
         </div>
       </div>
       <ChildRewiev />
-      {/* <div className="istorii_uspexa">
-          <h1>Истории упеха</h1>
-          <div className="flexbox-container">
-            <div className="arrowleft" onClick={() => {
-              const container = document.querySelector('.istorii_uspexa .flexbox');
-              const scrollAmount = container.clientWidth;
-              container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            }}></div>
-            <div className="flexbox">
-              <div className="dev"></div>
-              <div className="dev"></div>
-              <div className="dev"></div>
-              <div className="dev"></div>
-              <div className="dev"></div>
-              <div className="dev"></div>
-              <div className="dev"></div>
-              <div className="dev"></div>
-            </div>
-            <div className="arrowright" onClick={() => {
-              const container = document.querySelector('.istorii_uspexa .flexbox');
-              const scrollAmount = container.clientWidth;
-              container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            }}></div>
-          </div>
-        </div> */}
+      <VipuskRewiev />
       <div className="formblock4">
         <div className="center">
           <h1>Вы можете ставить свой отзыв тут</h1>
