@@ -7,7 +7,7 @@ export default function MapIframe() {
         const handleResize = () => {
             if (window.innerWidth <= 460) {
                 setScreenSize('mobile');
-            } else if (window.innerWidth <= 1366) {
+            } else if (window.innerWidth <= 1500) {
                 setScreenSize('laptop');
             } else {
                 setScreenSize('desktop');
@@ -39,6 +39,14 @@ export default function MapIframe() {
                 ...baseStyles,
                 width: '450px',
                 height: '450px',
+                position: 'relative',
+                marginLeft: '200px'
+            };
+        } else if (screenSize === 'nout') {
+            return {
+                ...baseStyles,
+                width: '0',
+                height: '0',
                 position: 'relative',
                 marginLeft: '200px'
             };

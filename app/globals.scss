@@ -79,7 +79,7 @@ main {
     font-family: GilroyB;
     width: 100%;
     height: 699px;
-    background-image: url(./icons/fon.png);
+    background-image: url(../imgs/photo_2025-01-30_00-57-28.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -511,16 +511,16 @@ main {
 
 .zanyatiya .right {
     margin-top: 50px;
-    background-image: url('./icons/deti.png');
+    background-image: url('../imgs/IMG_6973.JPG');
 }
 
 .metodiki .right {
-    background-image: url('./icons/deti2.png');
+    background-image: url('../imgs/photo_2025-01-30_00-58-13.jpg');
 }
 
 .otkr_uroki .right {
     margin-top: 70px;
-    background-image: url('./icons/deti3.png');
+    background-image: url('../imgs/photo_2025-01-30_00-58-08.jpg');
 }
 
 @media screen and (max-width: 768px) {
@@ -3915,13 +3915,13 @@ footer {
 }
 
 /* Media query for 1366px viewport width */
-@media screen and (width: 1366px) {
+@media screen and (width: 1500px) {
     .container-hobbies {
         .chess {
             .flex-boxes-container-hobbies {
                 .div {
                     width: 90%;
-                    max-width: 900px;
+                    width: 900px;
                 }
             }
         }
@@ -5344,7 +5344,7 @@ footer {
     .dev3 {
         width: 100%;
         height: 550px;
-        margin-top: 50px;
+        margin-top: 100px;
         position: relative;
 
         h2 {
@@ -5370,7 +5370,7 @@ footer {
     .dev4 {
         width: 100%;
         height: 550px;
-        margin-top: 450px;
+        margin-top: 100px;
         position: relative;
         h2 {
             font-size: 35px;
@@ -5519,13 +5519,13 @@ footer {
 }
 
 /* Media query for 1366px viewport width */
-@media screen and (width: 1366px) {
+@media screen and (width: 1500px) {
     .container-hobbies {
         .chess {
             .flex-boxes-container-hobbies {
                 .div {
                     width: 90%;
-                    max-width: 900px;
+                    width: 900px;
                 }
             }
         }
@@ -6939,7 +6939,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
+@media screen and (min-width: 1024px) and (max-width: 1500px) {
     header {
         height: 120px;
 
@@ -7598,7 +7598,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
+@media screen and (min-width: 1024px) and (max-width: 1500px) {
     footer {
         height: 700px;
         position: relative;
@@ -7623,8 +7623,8 @@ footer {
 
         .cont {
             position: absolute;
-            right: 200px;
-            top: 120px;
+            right: 340px;
+            top: 160px;
             width: 300px;
             height: auto;
             display: grid;
@@ -7670,7 +7670,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
+@media screen and (min-width: 1024px) and (max-width: 1500px) {
     .about-page {
         margin-top: 0;
         overflow-x: hidden;
@@ -7748,7 +7748,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
+@media screen and (min-width: 1024px) and (max-width: 1500px) {
     // ... existing code ...
 
     .raspisanie-blog {
@@ -7803,7 +7803,7 @@ footer {
 }
 // ... existing code ...
 
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
+@media screen and (min-width: 1024px) and (max-width: 1500px) {
     .container-edu {
         height: auto;
         min-height: 100px;
@@ -7900,7 +7900,7 @@ footer {
                 margin: 80px auto 0;
 
                 .div {
-                    width: 360px;
+                    width: 660px;
                     height: 360px;
                 }
             }
