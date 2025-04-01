@@ -7,7 +7,7 @@ export default function MapIframe() {
         const handleResize = () => {
             if (window.innerWidth <= 460) {
                 setScreenSize('mobile');
-            } else if (window.innerWidth <= 1670) {
+            } else if (window.innerWidth <= 1870) {
                 setScreenSize('laptop');
             } else {
                 setScreenSize('desktop');

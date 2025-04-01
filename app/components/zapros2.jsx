@@ -42,10 +42,10 @@ export default function Zapros2() {
                     name="number"
                     value={formData.number} required onChange={handleChange} />
                 <br />
-                <input placeholder="На какой урок вас записать?" required className="inp3" type="text"
+                <input placeholder="Сколько лет вашему ребёнку?" required className="inp3" type="text"
                     name="urok" value={formData.urok} onChange={handleChange} />
                 <br />
-                <button type="submit">Записаться на открытый урок</button>
+                <button type="submit">Отправить</button>
             </form>
         </div>
     );
