@@ -2653,7 +2653,7 @@ footer {
 
     .top {
         width: 100%;
-        height: 50%;
+        height: auto;
 
         h1 {
             font-size: 50px;
@@ -4140,7 +4140,7 @@ footer {
 
 .container-about {
     width: 100%;
-    height: 180vh;
+    height: 200vh;
     background-color: #0F1F44;
     font-family: GilroyR;
 
@@ -7528,7 +7528,7 @@ footer {
 
     .otzivi_detey {
         width: 95%;
-        height: 550px;
+        height: 650px;
         margin: 90px auto 0;
         margin-left: auto;
 
@@ -7734,18 +7734,17 @@ footer {
 
 @media screen and (min-width: 1024px) and (max-width: 1870px) {
     .about-page {
-        margin-top: 0;
+        margin-top: -100px;
         overflow-x: hidden;
         
         .container-about {
             width: 100%;
-            min-height: 100vh;
+            height: auto;
             background-color: #0F1F44;
-            padding: 20px;
+            padding: 0px;
 
             .top {
                 width: 95%;
-                height: auto;
                 margin: 0;
                 padding: 30px 0;
 
@@ -7769,7 +7768,6 @@ footer {
                 width: 95%;
                 margin: 0 auto;
                 padding: 30px 0;
-                height: auto;
                 .istorii_uspexa {
                     width: 100%;
 
