@@ -174,31 +174,76 @@ main {
 
 .programms {
     font-family: GilroyR;
-    width: 1280px;
-    height: 295px;
-    margin: 207px auto;
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+    max-width: 1280px;
+    margin: 100px auto;
+    padding: 0 20px;
 
     h1 {
         font-family: GilroyB;
-        font-size: 30px;
+        font-size: 36px;
         color: #0F1F44;
+        text-align: center;
+        margin-bottom: 50px;
     }
 
-    p {
-        font-size: 23px;
-        color: #0F1F44;
+    .programs-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        gap: 30px;
+        justify-content: center;
     }
 
-    button {
-        width: 223px;
-        height: 68px;
-        background-color: #18A3AD;
-        color: white;
-        font-size: 23px;
-        border: none;
-        cursor: pointer;
+    .program-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-family: GilroyB;
+            font-size: 24px;
+            color: #0F1F44;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            flex-grow: 1;
+
+            li {
+                font-size: 16px;
+                color: #0F1F44;
+                margin-bottom: 10px;
+                line-height: 1.4;
+            }
+        }
+
+        .details-btn {
+            width: 100%;
+            height: 50px;
+            background-color: #18A3AD;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken(#18A3AD, 10%);
+            }
+        }
     }
 
     .expanded-grid {
@@ -246,6 +291,20 @@ main {
                 font-size: 20px;
                 overflow: visible;
             }
+        }
+    }
+
+  
+ 
+    @media screen and (max-width: 1024px) {
+        .programs-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .programs-grid {
+            grid-template-columns: 1fr;
         }
     }
 }
@@ -484,7 +543,7 @@ main {
     .left {
         width: 55%;
         height: 100%;
-        padding-top: 100px;
+        padding-top: 50px;
         padding-left: 150px;
 
         h1 {
@@ -505,19 +564,22 @@ main {
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        margin-right: 100px;
     }
 }
-
+.zanyatiya .left {
+    margin-right: 100px;
+}
 .zanyatiya .right {
-    margin-top: 50px;
     background-image: url('../imgs/IMG_6973.JPG');
 }
 
 .metodiki .right {
     background-image: url('../imgs/photo_2025-01-30_00-58-13.jpg');
 }
-
+.otkr_uroki .left {
+    margin-right: 20px;
+    margin-top: 70px;
+}
 .otkr_uroki .right {
     margin-top: 70px;
     background-image: url('../imgs/photo_2025-01-30_00-58-08.jpg');
@@ -1280,7 +1342,7 @@ main {
 .infrastructure {
     font-family: GilroyR;
     width: 100%;
-    height: auto;
+    height: 800px;
     margin: 153px auto 0;
     position: relative;
 
@@ -7012,28 +7074,28 @@ footer {
         }
     }
 
-    .programms {
-        width: 1000px;
-        height: 250px;
-        margin: 150px auto;
+    // .programms {
+    //     width: 1000px;
+    //     height: auto;
+    //     margin: 150px auto;
 
-        h1 {
-            font-size: 26px;
-        }
+    //     h1 {
+    //         font-size: 26px;
+    //     }
 
-        p {
-            font-size: 18px;
-        }
+    //     p {
+    //         font-size: 18px;
+    //     }
 
-        button {
-            width: 200px;
-            height: 60px;
-            font-size: 18px;
-        }
-    }
+    //     button {
+    //         width: 200px;
+    //         height: 60px;
+    //         font-size: 18px;
+    //     }
+    // }
 
     .adventages {
-        height: 700px;
+        height: 800px;
 
         h1 {
             margin-top: 80px;
@@ -7043,13 +7105,13 @@ footer {
 
         .container {
             width: 90%;
-            height: 400px;
+            height: 500px;
             margin-top: 40px;
             margin-left: 70px;
 
             .grids {
                 width: 400px;
-                height: 400px;
+                height: 500px;
 
                 h2 {
                     font-size: 32px;
@@ -7096,7 +7158,7 @@ footer {
         margin: 150px auto 100px;
 
         .left {
-            padding-top: 80px;
+            padding-top: 20px;
             padding-left: 100px;
 
             h1 {
@@ -7414,7 +7476,7 @@ footer {
 
     .infrastructure {
         height: auto;
-        min-height: 900px;
+        min-height: 700px;
         margin: 100px auto 0;
 
         .arrowleft,
@@ -7918,16 +7980,15 @@ footer {
 
 @media screen and (max-width: 460px) {
   .infrastructure {
-    height: auto;
+    height: 900px;
     margin: 60px auto 0;
     padding: 0 15px;
 
     .h1 {
-      font-size: 28px;
+      font-size: 30px;
       margin: 0 0 30px;
       text-align: center;
     }
-
     .container {
       padding: 0;
 

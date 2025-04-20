@@ -8,10 +8,8 @@ export default function Security() {
     // Use require to properly load images
     const turniketImages = [
         require('../security_img/turniket_system/photo_2025-01-30_00-57-45.jpg'),
-        require('../security_img/turniket_system/photo_2025-01-30_00-57-48.jpg'),
         require('../security_img/turniket_system/photo_2025-01-30_00-57-49.jpg'),
         require('../security_img/turniket_system/photo_2025-01-30_00-57-51.jpg'),
-        require('../security_img/turniket_system/photo_2025-01-30_00-57-53.jpg'),
         require('../security_img/turniket_system/photo_2025-01-30_00-57-55.jpg')
     ];
     
@@ -23,8 +21,7 @@ export default function Security() {
     ];
     
     const videoImages = [
-        require('../security_img/videonablyudenie/photo_2025-01-30_00-57-55 (2).jpg'),
-        require('../security_img/videonablyudenie/photo_2025-01-30_00-57-56.jpg'),
+
         require('../security_img/videonablyudenie/photo_2025-01-30_00-57-57.jpg'),
         require('../security_img/videonablyudenie/photo_2025-01-30_00-57-59.jpg'),
         require('../security_img/videonablyudenie/photo_2025-01-30_00-58-24.jpg')
