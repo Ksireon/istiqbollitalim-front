@@ -359,59 +359,7 @@ export default function MainPage() {
       </div>
 
 
-      {/* <div className="raspisanie">
-          <h1>Расписание открытых уроков</h1>
-          <div className="container">
-            <div className="blocks ximiya">
-              <div className="img"></div> <br />
-              <h1>Химия</h1>
-              <div className="bottom">
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-              </div>
-            </div>
-            <div className="blocks geographia">
-              <div className="img2"></div> <br />
-              <h1>География</h1>
-              <div className="bottom">
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-              </div>
-            </div>
-            <div className="blocks geometria">
-              <div className="img3"></div> <br />
-              <h1>Геометрия</h1>
-              <div className="bottom">
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-                <p>Тайны кислот и оснований: индикаторы <br />
-                  в действии (6 класс)...................31.08.24/09:00</p>
-              </div>
-            </div>
-          </div>
-        </div> */}
+      
 
       <div className="formblock2">
         <div className="center">
@@ -423,31 +371,7 @@ export default function MainPage() {
 
       <div className="infrastructure">
         <h1 className="h1">Инфраструктура и безопасность</h1>
-        {/* <div className="container" ref={infrastructureRef}>
-          <div className="arrowleft" onClick={() => scrollInfrastructure('left')}></div>
-          <div className="infrastructurevids_grid"
-            onTouchStart={handleInfrastructureTouchStart}
-            onTouchMove={handleInfrastructureTouchMove}
-            onTouchEnd={handleInfrastructureTouchEnd}
-          >
-            <div className="block">
-              <div className="image"></div>
-              <h3>Турникетная система</h3>
-              
-            </div>
-            <div className="block">
-              <div className="image"></div>
-              <h3>Охрана</h3>
-              
-            </div>
-            <div className="block">
-              <div className="image"></div>
-              <h3>Видеонаблюдение </h3>
-              
-            </div>
-          </div>
-          <div className="arrowright" onClick={() => scrollInfrastructure('right')}></div>
-        </div> */}
+
 
 
         <div className="text">

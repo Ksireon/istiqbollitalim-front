@@ -24,7 +24,7 @@ export default function Zapros3() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://istiqbollitalim-app-1f6ea5e54343.herokuapp.com/tur', formData);
+            const response = await axios.post('https://web-production-340a1.up.railway.app/tur', formData);
             setResponseMessage(response.data.message);
             setFormData({ firsName: '', number: '', urok: '' });
         } catch (error) {

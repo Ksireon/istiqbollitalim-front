@@ -22,7 +22,7 @@ export default function Zapros1() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://istiqbollitalim-app-1f6ea5e54343.herokuapp.com/openlessons', formData);
+      const response = await axios.post('https://web-production-340a1.up.railway.app/openlessons', formData);
       setResponseMessage(response.data.message);
       console.log('Form reset:', formData); // Для проверки
       setFormData({ firsName: '', number: '' });
