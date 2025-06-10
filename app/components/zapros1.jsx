@@ -35,7 +35,7 @@ export default function Zapros1() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <h1>Записаться <br /> на открытый урок</h1>
+        <h1>Записаться <br /> на консультацию</h1>
         <input
           type="text"
           name="firsName"
