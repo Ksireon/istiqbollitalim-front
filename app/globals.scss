@@ -174,10 +174,8 @@ main {
 
 .programms {
     font-family: GilroyR;
-    width: 100%;
-    max-width: 1280px;
-    margin: 100px auto;
-    padding: 0 20px;
+    width: 80%;
+    margin: 50px auto;
 
     h1 {
         font-family: GilroyB;
@@ -193,6 +191,7 @@ main {
         grid-template-rows: auto auto;
         gap: 30px;
         justify-content: center;
+        overflow: hidden;
     }
 
     .program-card {
@@ -285,7 +284,7 @@ main {
         .expanded-content {
             max-height: none;
             overflow: visible;
-            
+
             p {
                 line-height: 1.6;
                 font-size: 20px;
@@ -294,8 +293,8 @@ main {
         }
     }
 
-  
- 
+
+
     @media screen and (max-width: 1024px) {
         .programs-grid {
             grid-template-columns: repeat(2, 1fr);
@@ -314,6 +313,7 @@ main {
     width: 100%;
     height: 1020px;
     background-color: #0F1F44;
+    overflow: hidden;
 
     h1 {
         margin-top: 103px;
@@ -324,11 +324,12 @@ main {
 
     .container {
         width: 87.5%;
-        height: 603px;
+        height: auto;
         margin-top: 54px;
         margin-left: 96px;
         display: flex;
         justify-content: space-between;
+        overflow: hidden;
 
         .grids {
             width: 503px;
@@ -390,6 +391,7 @@ main {
         height: auto;
         padding: 40px 20px;
         background-color: #0F1F44;
+        overflow: hidden;
 
         h1 {
             font-size: 32px;
@@ -405,6 +407,7 @@ main {
             display: flex;
             flex-direction: column;
             gap: 25px;
+            overflow: hidden;
 
             .grids {
                 width: 100%;
@@ -566,9 +569,11 @@ main {
         background-repeat: no-repeat;
     }
 }
+
 .zanyatiya .left {
     margin-right: 100px;
 }
+
 .zanyatiya .right {
     background-image: url('../imgs/photo_2025-01-30_00-58-12.jpg');
 }
@@ -576,10 +581,12 @@ main {
 .metodiki .right {
     background-image: url('../imgs/photo_2025-01-30_00-58-13.jpg');
 }
+
 .otkr_uroki .left {
     margin-right: 20px;
     margin-top: 70px;
 }
+
 .otkr_uroki .right {
     margin-top: 70px;
     background-image: url('../imgs/photo_2025-01-30_00-58-16.jpg');
@@ -1867,8 +1874,8 @@ main {
                 }
             }
         }
-            }
-        }
+    }
+}
 
 
 .istorii_uspexa {
@@ -1891,7 +1898,8 @@ main {
         position: relative;
         width: 95%;
         margin: 30px auto 0;
-        padding: 0 40px; /* Add padding to make room for the arrows */
+        padding: 0 40px;
+        /* Add padding to make room for the arrows */
     }
 
     .flexbox {
@@ -1906,11 +1914,11 @@ main {
         padding: 0 20px;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        
+
         &::-webkit-scrollbar {
             display: none;
         }
-        
+
         .dev {
             min-width: calc(33.333% - 14px);
             height: 240px;
@@ -1919,14 +1927,15 @@ main {
             flex-shrink: 0;
             border-radius: 8px;
             transition: transform 0.3s ease;
-            
+
             &:hover {
                 transform: scale(1.02);
             }
         }
     }
-    
-    .arrowleft, .arrowright {
+
+    .arrowleft,
+    .arrowright {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -1940,14 +1949,15 @@ main {
         cursor: pointer;
         z-index: 100;
         transition: background-color 0.3s ease;
-        
+
         &:hover {
             background-color: rgba(15, 31, 68, 1);
         }
     }
-    
+
     .arrowleft {
         left: 10px;
+
         &:before {
             content: '';
             width: 10px;
@@ -1958,9 +1968,10 @@ main {
             margin-left: 5px;
         }
     }
-    
+
     .arrowright {
         right: 10px;
+
         &:before {
             content: '';
             width: 10px;
@@ -2158,7 +2169,7 @@ footer {
     .adressblock {
         width: 720px;
         height: 720px;
-            background-color: red;
+        background-color: red;
         position: absolute;
         top: 340px;
         left: 120px;
@@ -2421,6 +2432,7 @@ footer {
         height: 450px;
         margin-top: 80px;
         position: relative;
+
         h2 {
             font-size: 35px;
             color: #0F1F44;
@@ -2446,6 +2458,7 @@ footer {
         height: 600px;
         margin-top: 450px;
         position: relative;
+
         h2 {
             font-size: 35px;
             color: #0F1F44;
@@ -2471,6 +2484,7 @@ footer {
         height: 500px;
         margin-top: 80px;
         position: relative;
+
         h2 {
             font-size: 35px;
             color: #0F1F44;
@@ -2762,7 +2776,7 @@ footer {
             .arrowleft {
                 left: 10px;
                 transform: translateY(-50%) scaleX(-1);
-                
+
                 &:before {
                     transform: rotate(-135deg);
                 }
@@ -2771,7 +2785,7 @@ footer {
             .arrowright {
                 right: 10px;
                 transform: translateY(-50%);
-                
+
                 &:before {
                     transform: rotate(45deg);
                 }
@@ -2802,7 +2816,7 @@ footer {
                     flex-shrink: 0;
                     position: relative;
                     overflow: hidden;
-                    
+
                     img {
                         width: 100%;
                         height: 100%;
@@ -3225,8 +3239,8 @@ footer {
                 }
             }
         }
-            }
-        }
+    }
+}
 
 
 .istorii_uspexa {
@@ -3249,7 +3263,8 @@ footer {
         position: relative;
         width: 95%;
         margin: 30px auto 0;
-        padding: 0 40px; /* Add padding to make room for the arrows */
+        padding: 0 40px;
+        /* Add padding to make room for the arrows */
     }
 
     .flexbox {
@@ -3264,11 +3279,11 @@ footer {
         padding: 0 20px;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        
+
         &::-webkit-scrollbar {
             display: none;
         }
-        
+
         .dev {
             min-width: calc(33.333% - 14px);
             height: 240px;
@@ -3277,14 +3292,15 @@ footer {
             flex-shrink: 0;
             border-radius: 8px;
             transition: transform 0.3s ease;
-            
+
             &:hover {
                 transform: scale(1.02);
             }
         }
     }
-    
-    .arrowleft, .arrowright {
+
+    .arrowleft,
+    .arrowright {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -3298,14 +3314,15 @@ footer {
         cursor: pointer;
         z-index: 100;
         transition: background-color 0.3s ease;
-        
+
         &:hover {
             background-color: rgba(15, 31, 68, 1);
         }
     }
-    
+
     .arrowleft {
         left: 10px;
+
         &:before {
             content: '';
             width: 10px;
@@ -3316,9 +3333,10 @@ footer {
             margin-left: 5px;
         }
     }
-    
+
     .arrowright {
         right: 10px;
+
         &:before {
             content: '';
             width: 10px;
@@ -3516,7 +3534,7 @@ footer {
     .adressblock {
         width: 720px;
         height: 720px;
-            background-color: red;
+        background-color: red;
         position: absolute;
         top: 340px;
         left: 120px;
@@ -3743,6 +3761,7 @@ footer {
     height: auto;
     margin: 100px auto 0;
     font-family: GilroyR;
+
     h1 {
         font-size: 50px;
     }
@@ -3830,6 +3849,7 @@ footer {
         height: 500px;
         margin-top: 50px;
         position: relative;
+
         h2 {
             font-size: 35px;
             color: #0F1F44;
@@ -3866,7 +3886,7 @@ footer {
         text-align: center;
         position: relative;
         overflow: visible;
-        
+
         &:after {
             content: '';
             position: absolute;
@@ -3891,7 +3911,7 @@ footer {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         position: relative;
         overflow: hidden;
-        
+
         &:before {
             content: '';
             position: absolute;
@@ -3901,7 +3921,7 @@ footer {
             height: 100%;
             background-color: #18A3AD;
         }
-        
+
         &:hover {
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
@@ -3915,14 +3935,14 @@ footer {
             align-items: center;
             justify-content: space-between;
             margin-bottom: 30px;
-            
+
             h1 {
                 font-size: 35px;
                 margin: 0;
                 text-align: left;
                 position: relative;
                 padding-bottom: 10px;
-                
+
                 &:after {
                     content: '';
                     position: absolute;
@@ -3934,7 +3954,7 @@ footer {
                     transform: none;
                 }
             }
-            
+
             .img {
                 display: none;
             }
@@ -3967,7 +3987,7 @@ footer {
                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
                 overflow: hidden;
                 transition: transform 0.3s ease;
-                
+
                 &:hover {
                     /* Removed scale effect to prevent shaking */
                 }
@@ -4255,7 +4275,7 @@ footer {
             .arrowleft {
                 left: 10px;
                 transform: translateY(-50%) scaleX(-1);
-                
+
                 &:before {
                     transform: rotate(-135deg);
                 }
@@ -4264,7 +4284,7 @@ footer {
             .arrowright {
                 right: 10px;
                 transform: translateY(-50%);
-                
+
                 &:before {
                     transform: rotate(45deg);
                 }
@@ -4295,7 +4315,7 @@ footer {
                     flex-shrink: 0;
                     position: relative;
                     overflow: hidden;
-                    
+
                     img {
                         width: 100%;
                         height: 100%;
@@ -4768,8 +4788,8 @@ footer {
                 }
             }
         }
-            }
-        }
+    }
+}
 
 
 .istorii_uspexa {
@@ -4792,7 +4812,8 @@ footer {
         position: relative;
         width: 95%;
         margin: 30px auto 0;
-        padding: 0 40px; /* Add padding to make room for the arrows */
+        padding: 0 40px;
+        /* Add padding to make room for the arrows */
     }
 
     .flexbox {
@@ -4807,11 +4828,11 @@ footer {
         padding: 0 20px;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        
+
         &::-webkit-scrollbar {
             display: none;
         }
-        
+
         .dev {
             min-width: calc(33.333% - 14px);
             height: 240px;
@@ -4820,14 +4841,15 @@ footer {
             flex-shrink: 0;
             border-radius: 8px;
             transition: transform 0.3s ease;
-            
+
             &:hover {
                 transform: scale(1.02);
             }
         }
     }
-    
-    .arrowleft, .arrowright {
+
+    .arrowleft,
+    .arrowright {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -4841,14 +4863,15 @@ footer {
         cursor: pointer;
         z-index: 100;
         transition: background-color 0.3s ease;
-        
+
         &:hover {
             background-color: rgba(15, 31, 68, 1);
         }
     }
-    
+
     .arrowleft {
         left: 10px;
+
         &:before {
             content: '';
             width: 10px;
@@ -4859,9 +4882,10 @@ footer {
             margin-left: 5px;
         }
     }
-    
+
     .arrowright {
         right: 10px;
+
         &:before {
             content: '';
             width: 10px;
@@ -4902,12 +4926,13 @@ footer {
         padding: 0 20px;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        
+
         &::-webkit-scrollbar {
             display: none;
         }
-        
-        .arrowleft, .arrowright {
+
+        .arrowleft,
+        .arrowright {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -4921,14 +4946,15 @@ footer {
             cursor: pointer;
             z-index: 10;
             transition: background-color 0.3s ease;
-            
+
             &:hover {
                 background-color: rgba(15, 31, 68, 1);
             }
         }
-        
+
         .arrowleft {
             left: -10px;
+
             &:before {
                 content: '';
                 width: 10px;
@@ -4939,9 +4965,10 @@ footer {
                 margin-left: 5px;
             }
         }
-        
+
         .arrowright {
             right: -10px;
+
             &:before {
                 content: '';
                 width: 10px;
@@ -4952,7 +4979,7 @@ footer {
                 margin-right: 5px;
             }
         }
-        
+
         .dev {
             min-width: 360px;
             height: 240px;
@@ -5119,7 +5146,7 @@ footer {
     .adressblock {
         width: 720px;
         height: 720px;
-            background-color: red;
+        background-color: red;
         position: absolute;
         top: 340px;
         left: 120px;
@@ -5434,6 +5461,7 @@ footer {
         height: 550px;
         margin-top: 100px;
         position: relative;
+
         h2 {
             font-size: 35px;
             color: #0F1F44;
@@ -5470,7 +5498,7 @@ footer {
         text-align: center;
         position: relative;
         overflow: visible;
-        
+
         &:after {
             content: '';
             position: absolute;
@@ -5495,7 +5523,7 @@ footer {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         position: relative;
         overflow: hidden;
-        
+
         &:before {
             content: '';
             position: absolute;
@@ -5505,7 +5533,7 @@ footer {
             height: 100%;
             background-color: #18A3AD;
         }
-        
+
         &:hover {
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
@@ -5519,14 +5547,14 @@ footer {
             align-items: center;
             justify-content: space-between;
             margin-bottom: 30px;
-            
+
             h1 {
                 font-size: 35px;
                 margin: 0;
                 text-align: left;
                 position: relative;
                 padding-bottom: 10px;
-                
+
                 &:after {
                     content: '';
                     position: absolute;
@@ -5538,7 +5566,7 @@ footer {
                     transform: none;
                 }
             }
-            
+
             .img {
                 display: none;
             }
@@ -5571,7 +5599,7 @@ footer {
                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
                 overflow: hidden;
                 transition: transform 0.3s ease;
-                
+
                 &:hover {
                     /* Removed scale effect to prevent shaking */
                 }
@@ -6779,7 +6807,7 @@ footer {
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             padding-bottom: 20px;
-            
+
             &::-webkit-scrollbar {
                 display: none;
             }
@@ -7096,7 +7124,7 @@ footer {
 
     .adventages {
         height: 800px;
-
+        overflow: hidden;
         h1 {
             margin-top: 80px;
             margin-left: 80px;
@@ -7105,10 +7133,10 @@ footer {
 
         .container {
             width: 90%;
-            height: 500px;
+            height: auto;
             margin-top: 40px;
             margin-left: 70px;
-
+            overflow: hidden;
             .grids {
                 width: 400px;
                 height: 500px;
@@ -7119,7 +7147,9 @@ footer {
                     margin-top: 30px;
                 }
 
-                .icon, .icon2, .icon3 {
+                .icon,
+                .icon2,
+                .icon3 {
                     margin-left: 25px;
                     margin-top: 25px;
                 }
@@ -7153,7 +7183,9 @@ footer {
         }
     }
 
-    .zanyatiya, .metodiki, .otkr_uroki {
+    .zanyatiya,
+    .metodiki,
+    .otkr_uroki {
         width: 95%;
         margin: 150px auto 100px;
 
@@ -7194,7 +7226,9 @@ footer {
             .blocks {
                 width: 420px;
 
-                .img, .img2, .img3 {
+                .img,
+                .img2,
+                .img3 {
                     width: 80px;
                     height: 120px;
                     margin-top: 25px;
@@ -7219,7 +7253,9 @@ footer {
         }
     }
 
-    .formblock2, .formblock3, .formblock4 {
+    .formblock2,
+    .formblock3,
+    .formblock4 {
         height: 700px;
 
         .center {
@@ -7272,7 +7308,8 @@ footer {
                     width: 420px;
                     height: 250px;
 
-                    h1, h2 {
+                    h1,
+                    h2 {
                         font-size: 30px;
                     }
 
@@ -7305,7 +7342,8 @@ footer {
             bottom: 300px;
             width: 600px;
 
-            .left, .right {
+            .left,
+            .right {
                 .button {
                     height: 90px;
 
@@ -7347,7 +7385,9 @@ footer {
                 display: flex;
                 flex-direction: column;
 
-                .img, .img2, .img3 {
+                .img,
+                .img2,
+                .img3 {
                     width: 70px;
                     height: 100px;
                     margin-top: 25px;
@@ -7693,7 +7733,8 @@ footer {
             grid-template-columns: 1fr;
             gap: 12px;
 
-            .left, .right {
+            .left,
+            .right {
                 width: 100%;
                 display: flex;
                 flex-direction: column;
@@ -7712,7 +7753,8 @@ footer {
                         transform: scale(1.02);
                     }
 
-                    .img1, .img2 {
+                    .img1,
+                    .img2 {
                         margin-left: 18px;
                         width: 20px;
                         height: 20px;
@@ -7736,7 +7778,7 @@ footer {
     .about-page {
         margin-top: -100px;
         overflow-x: hidden;
-        
+
         .container-about {
             width: 100%;
             height: auto;
@@ -7768,6 +7810,7 @@ footer {
                 width: 95%;
                 margin: 0 auto;
                 padding: 30px 0;
+
                 .istorii_uspexa {
                     width: 100%;
 
@@ -7791,7 +7834,8 @@ footer {
                             border-radius: 8px;
                         }
 
-                        .arrowleft, .arrowright {
+                        .arrowleft,
+                        .arrowright {
                             width: 35px;
                             height: 35px;
                             cursor: pointer;
@@ -7824,7 +7868,8 @@ footer {
             margin-bottom: 40px;
         }
 
-        .november, .december {
+        .november,
+        .december {
             width: 100%;
             height: auto;
             position: relative;
@@ -7862,6 +7907,7 @@ footer {
         }
     }
 }
+
 // ... existing code ...
 
 @media screen and (min-width: 1024px) and (max-width: 1870px) {
@@ -7889,6 +7935,7 @@ footer {
             width: 90%;
             height: 400px;
             margin: 100px auto 0;
+
             .div {
                 width: 30%;
                 height: 100%;
@@ -7929,10 +7976,12 @@ footer {
                 max-width: 50%;
             }
         }
-        .dev4{
+
+        .dev4 {
             margin-top: 80px;
         }
-        .dev3{
+
+        .dev3 {
             margin-bottom: 120px;
         }
     }
@@ -7974,70 +8023,71 @@ footer {
         }
     }
 }
+
 // ... existing code ...
 
 @media screen and (max-width: 460px) {
-  .infrastructure {
-    height: 900px;
-    margin: 60px auto 0;
-    padding: 0 15px;
+    .infrastructure {
+        height: 900px;
+        margin: 60px auto 0;
+        padding: 0 15px;
 
-    .h1 {
-      font-size: 30px;
-      margin: 0 0 30px;
-      text-align: center;
-    }
-    .container {
-      padding: 0;
-
-      .arrowleft,
-      .arrowright {
-        display: none;
-      }
-    }
-
-    .infrastructurevids_grid {
-      margin: 0;
-      padding: 20px 0;
-      gap: 15px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-
-      .block {
-        min-width: 280px;
-        padding: 15px;
-        scroll-snap-align: center;
-
-        .image {
-          height: 180px;
-          margin-bottom: 12px;
+        .h1 {
+            font-size: 30px;
+            margin: 0 0 30px;
+            text-align: center;
         }
 
-        h3 {
-          font-size: 20px;
-          margin-bottom: 8px;
+        .container {
+            padding: 0;
+
+            .arrowleft,
+            .arrowright {
+                display: none;
+            }
         }
 
-        p {
-          font-size: 14px;
+        .infrastructurevids_grid {
+            margin: 0;
+            padding: 20px 0;
+            gap: 15px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+
+            .block {
+                min-width: 280px;
+                padding: 15px;
+                scroll-snap-align: center;
+
+                .image {
+                    height: 180px;
+                    margin-bottom: 12px;
+                }
+
+                h3 {
+                    font-size: 20px;
+                    margin-bottom: 8px;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+            }
         }
-      }
+
+        .text {
+            margin-top: 40px;
+            padding: 0 15px;
+
+            p {
+                font-size: 16px;
+                line-height: 1.5;
+                text-align: left;
+
+                br {
+                    display: none;
+                }
+            }
+        }
     }
-
-    .text {
-      margin-top: 40px;
-      padding: 0 15px;
-
-      p {
-        font-size: 16px;
-        line-height: 1.5;
-        text-align: left;
-
-        br {
-          display: none;
-        }
-      }
-    }
-  }
 }
-

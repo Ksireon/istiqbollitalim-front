@@ -8,12 +8,13 @@ import Zapros4 from "./zapros4";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
 import ChildRewiev from "./otzivi_detey"
 import ParentsRewiev from './otzivi_roditeley';
 import VipuskRewiev from './otzivi_vipusknikov';
 
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 
 
@@ -26,6 +27,15 @@ export default function MainPage() {
   const pedSostavRef = useRef(null);
   const infrastructureRef = useRef(null);
   const [expandedProgram, setExpandedProgram] = useState(null); // Track which program is expanded
+
+  // Animation refs
+  const programsRef = useRef(null);
+  const advantagesRef = useRef(null);
+  const infrastructureTextRef = useRef(null);
+  const formBlocksRef = useRef([]);
+  const titleRef = useRef(null);
+  const programCardsRef = useRef([]);
+  const advantageCardsRef = useRef([]);
 
   useEffect(() => {
     try {
@@ -133,82 +143,263 @@ export default function MainPage() {
 
 
   useEffect(() => {
-    // Анимация для блока main (срабатывает сразу)
-    gsap.fromTo(
-      mainRef.current, // Триггерим на main
-      { opacity: 0, scale: 1 },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 1.5,
-        ease: "power3.out",
-      }
-    );
+    // Создаем timeline для главной секции
+    const mainTimeline = gsap.timeline();
 
-    // Анимация для блока left (срабатывает сразу)
-    gsap.fromTo(
-      leftRef.current,
-      { opacity: 0, x: -50 },
+    // Анимация фона с эффектом волны
+    mainTimeline.fromTo(
+      mainRef.current?.querySelector('.blueblackfon'),
+      { scaleX: 0, transformOrigin: "left center" },
       {
-        opacity: 1,
-        x: 0,
+        scaleX: 1,
         duration: 1.2,
-        delay: 0.5, // Задержка перед анимацией
-        ease: "power3.out",
+        ease: "power2.out",
       }
-    );
+    )
+      // Анимация заголовка с печатающим эффектом
+      .fromTo(
+        leftRef.current,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "back.out(1.7)",
+        },
+        "-=0.5"
+      )
+      // Анимация формы с пружинящим эффектом
+      .fromTo(
+        rightRef.current,
+        { opacity: 0, scale: 0.8, rotation: 5 },
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: 0,
+          duration: 1,
+          ease: "elastic.out(1, 0.5)",
+        },
+        "-=0.3"
+      );
 
-    // Анимация для блока right (срабатывает сразу)
-    gsap.fromTo(
-      rightRef.current,
-      { opacity: 0, x: 50 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1.2,
-        delay: 0.5,
-        ease: "power3.out",
-      }
-    );
+    // Добавляем плавающую анимацию для формы
+    gsap.to(rightRef.current, {
+      y: -10,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      delay: 2
+    });
   }, []);
 
   useEffect(() => {
+    // Анимация для секций с left/right блоками
     sectionsRef.current.forEach((section, index) => {
       const left = section.querySelector(".left");
       const right = section.querySelector(".right");
 
+      if (left) {
+        gsap.fromTo(
+          left,
+          { opacity: 0, x: -80, rotationY: -15 },
+          {
+            opacity: 1,
+            x: 0,
+            rotationY: 0,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
 
-      gsap.fromTo(
-        left,
-        { opacity: 0, x: -50 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
+      if (right) {
+        gsap.fromTo(
+          right,
+          { opacity: 0, x: 80, rotationY: 15 },
+          {
+            opacity: 1,
+            x: 0,
+            rotationY: 0,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
+    });
+
+    // Анимация карточек программ
+    if (programCardsRef.current.length > 0) {
+      programCardsRef.current.forEach((card, index) => {
+        if (card) {
+          gsap.fromTo(
+            card,
+            {
+              opacity: 0,
+              y: 60,
+              scale: 0.9,
+              rotationX: -15
+            },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              rotationX: 0,
+              duration: 0.8,
+              delay: index * 0.15,
+              ease: "back.out(1.7)",
+              scrollTrigger: {
+                trigger: card,
+                start: "top 90%",
+                toggleActions: "play none none reverse",
+              },
+            }
+          );
+
+          // Добавляем hover эффект
+          card.addEventListener('mouseenter', () => {
+            gsap.to(card, {
+              scale: 1.05,
+              y: -10,
+              boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+              duration: 0.3,
+              ease: "power2.out"
+            });
+          });
+
+          card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+              scale: 1,
+              y: 0,
+              boxShadow: "0 5px 15px rgba(0,0,0,0.05)",
+              duration: 0.3,
+              ease: "power2.out"
+            });
+          });
         }
-      );
+      });
+    }
 
+    // Анимация карточек преимуществ
+    if (advantageCardsRef.current.length > 0) {
+      advantageCardsRef.current.forEach((card, index) => {
+        if (card) {
+          gsap.fromTo(
+            card,
+            {
+              opacity: 0,
+              y: 50,
+              rotationY: 20
+            },
+            {
+              opacity: 1,
+              y: 0,
+              rotationY: 0,
+              duration: 1,
+              delay: index * 0.2,
+              ease: "elastic.out(1, 0.5)",
+              scrollTrigger: {
+                trigger: card,
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+              },
+            }
+          );
 
+          // Анимация иконок при появлении
+          const icon = card.querySelector('.icon, .icon2, .icon3');
+          if (icon) {
+            gsap.fromTo(
+              icon,
+              { scale: 0, rotation: -180 },
+              {
+                scale: 1,
+                rotation: 0,
+                duration: 0.8,
+                delay: index * 0.2 + 0.3,
+                ease: "back.out(2)",
+                scrollTrigger: {
+                  trigger: card,
+                  start: "top 85%",
+                  toggleActions: "play none none reverse",
+                },
+              }
+            );
+          }
+        }
+      });
+    }
+
+    // Анимация заголовков секций
+    const sectionTitles = document.querySelectorAll('.programms h1, .adventages h1, .infrastructure .h1');
+    sectionTitles.forEach((title, index) => {
       gsap.fromTo(
-        right,
-        { opacity: 0, x: 50 },
+        title,
+        { opacity: 0, y: 30, scale: 0.9 },
         {
           opacity: 1,
-          x: 0,
+          y: 0,
+          scale: 1,
           duration: 1,
+          ease: "power3.out",
           scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            toggleActions: "play none none none",
+            trigger: title,
+            start: "top 90%",
+            toggleActions: "play none none reverse",
           },
         }
       );
     });
+
+    // Анимация форм-блоков
+    const formBlocks = document.querySelectorAll('.formblock2, .formblock3, .formblock4');
+    formBlocks.forEach((block, index) => {
+      gsap.fromTo(
+        block,
+        { opacity: 0, scale: 0.95, y: 40 },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: block,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    // Анимация текста инфраструктуры
+    if (infrastructureTextRef.current) {
+      gsap.fromTo(
+        infrastructureTextRef.current,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: infrastructureTextRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
   }, []);
 
 
@@ -227,10 +418,10 @@ export default function MainPage() {
       </main>
 
 
-      <div className="programms">
+      <div className="programms" ref={programsRef}>
         <h1>Образовательные программы</h1>
         <div className="programs-grid">
-          <div className="program-card">
+          <div className="program-card" ref={(el) => (programCardsRef.current[0] = el)}>
             <h2>Детский сад</h2>
             <br />
             <ul>
@@ -244,7 +435,7 @@ export default function MainPage() {
             </ul>
             {/* <button className="details-btn">Подробнее</button> */}
           </div>
-          <div className="program-card">
+          <div className="program-card" ref={(el) => (programCardsRef.current[1] = el)}>
             <h2>Подготовительные группы</h2>
             <br />
             <ul>
@@ -259,7 +450,7 @@ export default function MainPage() {
             </ul>
             {/* <button className="details-btn">Подробнее</button> */}
           </div>
-          <div className="program-card">
+          <div className="program-card" ref={(el) => (programCardsRef.current[2] = el)}>
             <h2>Начальная школа</h2>
             <br />
             <ul>
@@ -271,7 +462,7 @@ export default function MainPage() {
             </ul>
             {/* <button className="details-btn">Подробнее</button> */}
           </div>
-          <div className="program-card">
+          <div className="program-card" ref={(el) => (programCardsRef.current[3] = el)}>
             <h2>Средняя школа</h2>
             <br />
             <ul>
@@ -286,7 +477,7 @@ export default function MainPage() {
             </ul>
             {/* <button className="details-btn">Подробнее</button> */}
           </div>
-          <div className="program-card">
+          <div className="program-card" ref={(el) => (programCardsRef.current[4] = el)}>
             <h2>Летний лагерь</h2>
             <br />
             <ul>
@@ -304,21 +495,21 @@ export default function MainPage() {
         </div>
       </div>
 
-      <div className="adventages" >
+      <div className="adventages" ref={advantagesRef}>
         <h1>Наши преимущества</h1>
         <div className="container">
-          <div className="grids">
+          <div className="grids" ref={(el) => (advantageCardsRef.current[0] = el)}>
             <h2>Качество образования</h2>
             <div className="icon"></div>
             <p>Наша школа — это больше, чем просто учеба. Мы даем детям сильное образование, которое становится прочной основой для успешного будущего.</p>
           </div>
-          <div className="grids">
+          <div className="grids" ref={(el) => (advantageCardsRef.current[1] = el)}>
             <h2>Индивидуальный подход</h2>
             <div className="icon2"></div>
             <p>У каждого ребёнка свой темп, интересы и потенциал — и мы это учитываем. В нашей школе индивидуальный подход — не формальность, а реальный путь к раскрытию сильных сторон каждого ученика.
             </p>
           </div>
-          <div className="grids">
+          <div className="grids" ref={(el) => (advantageCardsRef.current[2] = el)}>
             <h2>Безопасность</h2>
             <div className="icon3"></div>
             <p>У нас безопасность — это не просто камеры и охрана, а продуманная система заботы о каждом ребёнке. Родители могут быть уверены: их дети в надёжных руках.
@@ -357,16 +548,16 @@ export default function MainPage() {
         <div className="left">
           <h1>Открытые уроки</h1> <br />
           <p>В нашей школе помимо обычных занятий мы регулярно проводим <br /> открытые уроки в формате представлений, сценок и творческих <br /> выступлений. Такой подход делает обучение ярким <br /> и запоминающимся. <br /> <br />
-Дети не просто слушают материал — они проживают его. Это помогает лучше усваивать знания и развивать уверенность в себе. Родители могут лично увидеть, как раскрываются таланты их ребёнка.
-</p>
+            Дети не просто слушают материал — они проживают его. Это помогает лучше усваивать знания и развивать уверенность в себе. Родители могут лично увидеть, как раскрываются таланты их ребёнка.
+          </p>
         </div>
         <div className="right"></div>
       </div>
 
 
-      
 
-      <div className="formblock2">
+
+      <div className="formblock2" ref={(el) => (formBlocksRef.current[0] = el)}>
         <div className="center">
           <h1>Узнать подробнее о школе</h1>
           <Zapros2 />
@@ -375,11 +566,11 @@ export default function MainPage() {
 
 
       <div className="infrastructure">
-        <h1 className="h1">Инфраструктура и безопасность</h1>
+        <h1 className="h1" ref={titleRef}>Инфраструктура и безопасность</h1>
 
 
 
-        <div className="text">
+        <div className="text" ref={infrastructureTextRef}>
           <p>В нашей школе безопасность учеников является приоритетом. Мы принимаем все необходимые меры для создания <br />
             комфортной и защищенной образовательной среды. В школе действует современная система видеонаблюдения, <br />
             которая охватывает все ключевые зоны, включая входы, коридоры, классы и прилегающую территорию. Камеры <br />
@@ -400,15 +591,15 @@ export default function MainPage() {
           </p>
         </div>
       </div>
-     
-      <div className="formblock3">
+
+      <div className="formblock3" ref={(el) => (formBlocksRef.current[1] = el)}>
         <div className="center">
           <Zapros3 />
         </div>
       </div>
       <ChildRewiev />
       <VipuskRewiev />
-      <div className="formblock4">
+      <div className="formblock4" ref={(el) => (formBlocksRef.current[2] = el)}>
         <div className="center">
           <h1>Вы можете ставить свой отзыв тут</h1>
           <Zapros4 />
