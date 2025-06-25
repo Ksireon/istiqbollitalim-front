@@ -10,8 +10,7 @@ export default function Zapros3() {
     
     const [formData, setFormData] = useState({
         firsName: '',
-        number: '',
-        urok: ''
+        number: ''
     });
 
     const [responseMessage, setResponseMessage] = useState('');
@@ -26,7 +25,7 @@ export default function Zapros3() {
         try {
             const response = await axios.post('https://web-production-340a1.up.railway.app/tur', formData);
             setResponseMessage(response.data.message);
-            setFormData({ firsName: '', number: '', urok: '' });
+            setFormData({ firsName: '', number: '' });
         } catch (error) {
             setResponseMessage('Error submitting form');
         }
