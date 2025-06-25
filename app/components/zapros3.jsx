@@ -44,10 +44,10 @@ export default function Zapros3() {
                     value={formData.number} onChange={handleChange}
                     required />
                 <br />
-                <input placeholder="На какой урок вас записать?" className="inp3" type="text"
-                    name="urok" value={formData.urok} onChange={handleChange} />
+                {/* <input placeholder="На какой урок вас записать?" className="inp3" type="text"
+                    name="urok" value={formData.urok} onChange={handleChange} /> */}
                 <br />
-                <button type="submit">Записаться на тур по школе</button>
+                <button type="submit">Записаться на собеседование</button>
             </form>
         </div>
     );

@@ -601,7 +601,7 @@ export default function MainPage() {
       <VipuskRewiev />
       <div className="formblock4" ref={(el) => (formBlocksRef.current[2] = el)}>
         <div className="center">
-          <h1>Вы можете ставить свой отзыв тут</h1>
+          <h1>Вы можете оставить свой отзыв тут</h1>
           <Zapros4 />
         </div>
       </div>
