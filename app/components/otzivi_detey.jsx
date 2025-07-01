@@ -18,15 +18,7 @@ export default function ChildRewiev() {
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen>
         </iframe>
-        <iframe
-          
-          className="vid"
-          src="https://www.youtube-nocookie.com/embed/_6Qm_Cn5sL4"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen>
-        </iframe>
+        
         <iframe
           
           className="vid"
