@@ -31,6 +31,13 @@ export default function RootLayout({ children }) {
             src="https://www.facebook.com/tr?id=1422083055509092&ev=PageView&noscript=1"
             alt="Meta Pixel"
           />
+          <div>
+            <img
+              src="https://mc.yandex.ru/watch/103244578"
+              style={{ position: "absolute", left: "-9999px" }}
+              alt=""
+            />
+          </div>
         </noscript>
       </head>
 
@@ -48,6 +55,24 @@ export default function RootLayout({ children }) {
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '1422083055509092');
             fbq('track', 'PageView');
+          `}
+        </Script>
+        <Script id="yandex-metrica" strategy="afterInteractive">
+          {`
+            (function(m,e,t,r,i,k,a){
+              m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+              m[i].l=1*new Date();
+              k=e.createElement(t),a=e.getElementsByTagName(t)[0],
+              k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+            })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(103244578, "init", {
+                  clickmap:true,
+                  trackLinks:true,
+                  accurateTrackBounce:true,
+                  webvisor:true
+            });
           `}
         </Script>
         {children}
